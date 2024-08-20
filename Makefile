@@ -17,7 +17,7 @@ SRC_DIR = srcs/
 
 SRC_1 = srcs/push_swap/push_swap.c \
 
-SRC_2 =
+SRC_2 = srcs/push_swap/utils.c \
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
