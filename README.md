@@ -1,5 +1,5 @@
 <h1 align="center">
-	📖 Pipex
+	📖 Push_swap
 </h1>
 
 ![Push_swap](https://github.com/user-attachments/assets/e5de5dba-bfa2-4136-acb3-b2f0373e109a)
