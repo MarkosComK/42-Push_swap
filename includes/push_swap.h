@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/20 14:04:17 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/20 20:04:17 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ typedef struct s_stack
 	s_stack	*next;
 	s_stack	*prev;
 }			t_stack;
+
+void	ft_error(void);
 
 #endif
