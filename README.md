@@ -123,29 +123,68 @@ pb, sa, pa?
 <tr><th>Before Swap A</th><th>After Swap A</th></tr>
 <tr><td>
 
-| Stacks |  A  |  B  |
-|--------|-----|-----|
-|        | not b|and c |
+| Stacks |   A   |   B   |
+|--------|-------|-------|
+|        |       |  -38  |
+|   ->   |   10  |       |
+|   ->   |   7   |       |
+|        |   42  |       |
 
 </td><td>
 
-| Stacks | A | B |
-|--|--|--|
-|a| not b|and c |
+| Stacks |   A   |   B   |
+|--------|-------|-------|
+|        |       |  -38  |
+|        |   7   |       |
+|        |   10  |       |
+|        |   42  |       |
 
 </td></tr> </table>
 
+3. Now lets see our last operation happening; <strong>PA</strong> which stands for <strong>Push A</strong>
+
+<table>
+<tr><th>Before Push A</th><th>After Push A</th></tr>
+<tr><td>
 
 | Stacks |   A   |   B   |
-| :---:  | :---: | :---: |
-|        |   ->  |  -38  |
-|        |   10  |       |
+|--------|-------|-------|
+|        |       |  -38  |
 |        |   7   |       |
+|        |   10  |       |
 |        |   42  |       |
 
-| Stacks |   A   |   B   | 
-| :---:  | :---: | :---: |
-|        |       |  -38  |
-|   ->   |   7   |       |
-|   ->   |   10  |       |
+</td><td>
+
+| Stacks |   A   |   B   |
+|--------|-------|-------|
+|        |   -38 |       |
+|        |   7   |       |
+|        |   10  |       |
 |        |   42  |       |
+
+</td></tr> </table>
+
+Our stack A at the beginning was
+
+```console
+-38 10 7 42
+```
+
+Now is
+
+```console
+-38 7 10 42
+```
+
+It is in ascending order! that`s what we wanted to have.
+<br>
+Now go back to the beginning of our program running to wach again each step.
+
+## recapitulating
+
+- Our program will receive intengers.
+- will take these intengers and use both stacks <strong>A</strong> and <strong>B</strong> to put them in ascending order
+- will use the operations provided in the subject (pa, pb, sa, sb...) to order them.
+
+This sould give you a god starting point to create your own push_swap. Remember, you wi`ll implement a sorting algorithm to use both stacks do what you have to. Try by your own, then come back here i you need to watch the next steps. I will update this README to help everyone. don not forget to give me a <strong>Star</strong>
