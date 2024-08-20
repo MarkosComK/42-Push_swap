@@ -42,10 +42,32 @@
     Basicaly we have two stacks (don`t worry if you don`t understand any concept or word yet, they`ll be explained later on) <i>A</i> and <i>B</i> then we gonna create a program that implemnts a sorting algorithm which will use those two stacks to <strong><i>sort</i></strong> the stacks.
 </p>
 
-| Stacks |  #A   |  #B   |
+| Stacks |   A   |   B   |
 | :---:  | :---: | :---: |
-|        |  Node |  Node |
+|        |  -38  |       |
+|        |   10  |       |
+|        |   7   |       |
+|        |   42  |       |
 
-```C
+<p>
+    Our program works this way:
+</p>
 
+```sh
+./push_swap -38 10 7 42
 ```
+
+<p>
+    ./push_swap is our program
+</p>
+<br>
+<p>
+    -38 10 7 42 is our input
+</p>
+<br>
+<p>
+    ./push_swap will take this input, use the implemented sorting algorithm and return a value (this value is the amount of used operations to sort the values)
+</p>
+<br>
+
+## Operations?
