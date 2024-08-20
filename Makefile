@@ -1,3 +1,12 @@
+RED    = $(shell printf "\33[31m")
+GREEN  = $(shell printf "\33[32m")
+WHITE  = $(shell printf "\33[37m")
+YELLOW = $(shell printf "\33[33m")
+RESET  = $(shell printf "\33[0m")
+BLUE = $(shell printf "\33[34m")
+PURPLE = $(shell printf "\33[35m")
+TITLE = $(shell printf "\33[32;40m")
+
 NAME = push_swap
 CC = cc
 RM = rm -f
@@ -21,6 +30,16 @@ INCLUDE = -L ./libft -lft
 ${NAME}: ${OBJ_1} ${OBJ_2}
 	@make --silent -C $(LIBFTDIR)
 	@${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
+	@echo "$(PURPLE)██████╗ ██╗   ██╗███████╗██╗  ██╗        ███████╗██╗    ██╗ █████╗ ██████╗ "
+	@echo "██╔══██╗██║   ██║██╔════╝██║  ██║        ██╔════╝██║    ██║██╔══██╗██╔══██╗"
+	@echo "██████╔╝██║   ██║███████╗███████║        ███████╗██║ █╗ ██║███████║██████╔╝"
+	@echo "██╔═══╝ ██║   ██║╚════██║██╔══██║        ╚════██║██║███╗██║██╔══██║██╔═══╝ "
+	@echo "██║     ╚██████╔╝███████║██║  ██║███████╗███████║╚███╔███╔╝██║  ██║██║     "
+	@echo "╚═╝      ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝     "
+	@echo
+	@echo "$(GREEN) Successfully compiled push_swap.$(RESET)"
+	@echo
+	@echo
 
 all: ${NAME} ${BONUS}
 
