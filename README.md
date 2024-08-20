@@ -58,15 +58,15 @@
 ```
 
 <p>
-    ./push_swap is our program
+    <code style="color : green">./push_swap</code> is our program
 </p>
 <br>
 <p>
-    -38 10 7 42 is our input
+    <code style="color : orange">38 10 7 42</code>is our input
 </p>
 <br>
 <p>
-    ./push_swap will take this input, use the implemented sorting algorithm and return a value (this value is the amount of used operations to sort the values)
+     <code style="color : green">./push_swap</code>take this input, use the implemented sorting algorithm and return a value (this value is the amount of used operations to sort the values)
 </p>
 <br>
 
