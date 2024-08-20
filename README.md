@@ -38,4 +38,14 @@
 	<b><i>The project objectives</i></b><br>
 </p>
 
+<p align="center">
+    Basicaly we have two stacks (don`t worry if you don`t understand any concept or word yet, they`ll be explained later on) <i>A</i> and <i>B</i> then we gonna create a program that implemnts a sorting algorithm which will use those two stacks to <strong><i>sort</i></strong> the stacks.
+</p>
 
+| Stacks |  #A   |  #B   |
+| :---:  | :---: | :---: |
+|        |  Node |  Node |
+
+```C
+
+```
