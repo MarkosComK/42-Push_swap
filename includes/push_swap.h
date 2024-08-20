@@ -20,4 +20,12 @@
 # include <stdbool.h>
 # include "../libft/libft.h"
 
+typedef struct s_stack
+{
+	long	nbr;
+	long	index;
+	s_stack	*next;
+	s_stack	*prev;
+}			t_stack;
+
 #endif
