@@ -8,8 +8,10 @@
 	<b><i>Development repo for 42cursus Push_swap project</i></b><br>
 	For further information about 42cursus and its projects, please refer to <a href="https://github.com/MarkosComK/42-Common-Core-Guide"><b>42-Common-Core-Guide repo</b></a>.
 </p>
-
-
+<p align="center">
+	Don`t forget to give it a ⭐<strong>Star</strong>.
+</p>
+<!---
 <h3 align="center">
 	<a href="#%EF%B8%8F-about">About</a>
 	<span> · </span>
@@ -20,9 +22,6 @@
 	<a href="#-testing">Testing</a>
 </h3>
 
----
-<br>
-<!--
 <div align="center">
 	<img src="https://github.com/MarkosComK/42-Libft/assets/67120870/10a2a298-340e-4a67-96bd-d97716a60526">
 </div>
@@ -35,7 +34,7 @@
 <br>
 
 <p align="center">
-	<b><i>The project objectives</i></b><br>
+	<b><i>The project objectives ✍️</i></b><br>
 </p>
 
 <p align="center">
@@ -70,7 +69,7 @@
 </p>
 <br>
 
-## Operations ?
+## Operations ? ⚙️
 
 - what are these <strong>operations</strong> ?
 
@@ -181,10 +180,10 @@ It is in ascending order! that`s what we wanted to have.
 <br>
 Now go back to the beginning of our program running to wach again each step.
 
-## recapitulating
+## recapitulating ✍️
 
 - Our program will receive intengers.
 - will take these intengers and use both stacks <strong>A</strong> and <strong>B</strong> to put them in ascending order
 - will use the operations provided in the subject (pa, pb, sa, sb...) to order them.
 
-This sould give you a god starting point to create your own push_swap. Remember, you wi`ll implement a sorting algorithm to use both stacks do what you have to. Try by your own, then come back here i you need to watch the next steps. I will update this README to help everyone. don not forget to give me a <strong>Star</strong>
+This sould give you a god starting point to create your own push_swap. Remember, you wi`ll implement a sorting algorithm to use both stacks do what you have to. Try by your own, then come back here i you need to watch the next steps. I will update this README to help everyone. don not forget to give me a ⭐<strong>Star</strong>
