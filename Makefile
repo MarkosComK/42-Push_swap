@@ -16,20 +16,20 @@ OBJ_2 = ${SRC_2:.c=.o}
 INCLUDE = -L ./libft -lft
 
 .c.o:
-	${CC} -c $< -o ${<:.c=.o}
+	@${CC} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJ_1} ${OBJ_2}
-	make -C $(LIBFTDIR)
-	${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
+	@make --silent -C $(LIBFTDIR)
+	@${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
 
 all: ${NAME} ${BONUS}
 
 clean:
-	${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
+	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
 	@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 	@cd $(LIBFTDIR) && $(MAKE) fclean
 
 re: clean all
