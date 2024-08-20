@@ -53,21 +53,99 @@
     Our program works this way:
 </p>
 
-```sh
+```console
 ./push_swap -38 10 7 42
 ```
 
 <p>
-    <code style="color : green">./push_swap</code> is our program
+    <code style="color: cyan">./push_swap</code> is our program
 </p>
 <br>
 <p>
-    <code style="color : orange">38 10 7 42</code>is our input
+    <code style="color: orange">38 10 7 42</code> is our input
 </p>
 <br>
 <p>
-     <code style="color : green">./push_swap</code>take this input, use the implemented sorting algorithm and return a value (this value is the amount of used operations to sort the values)
+     <code style="color: cyan">./push_swap</code> take this input, use the implemented sorting algorithm and return a value (this value is the amount of used operations to sort the values)
 </p>
 <br>
 
-## Operations?
+## Operations ?
+
+- what are these <strong>operations</strong> ?
+
+We have a pre-set of operations to use. they are:
+
+- swap
+- rotate
+- reverse rotate
+- push
+
+### ok, but. How do i use all this information ?
+
+Well. Now thigs will start make some sense. Let`s see step by step.
+
+remember these numbers <code>38 10 7 42</code> let`s see our program working and you will understand why we started talking about all of that.
+
+let`s run our program
+
+```console
+./push_swap 38 10 7 42
+pb
+sa
+pa
+```
+pb, sa, pa?
+
+### first let`s take a look at our starting point (our stacks)
+
+| Stacks |   A   |   B   |
+| :---:  | :---: | :---: |
+|        |  -38  |       |
+|        |   10  |       |
+|        |   7   |       |
+|        |   42  |       |
+
+### now we`re going to see each operation of our program(pb, sa, pa)
+
+1. <strong>pb</strong> stands for <strong>push B</strong> so our first operation in our program is push our first value to stack b
+
+| Stacks |   A   |   B   |
+| :---:  | :---: | :---: |
+|        |   ->  |  -38  |
+|        |   10  |       |
+|        |   7   |       |
+|        |   42  |       |
+
+2. Next operation is <strong>sa</strong> which is <strong>swap A</strong>. Gonna swap the first two items of <strong>stack A</strong>:
+
+<table>
+<tr><th>Before Swap A</th><th>After Swap A</th></tr>
+<tr><td>
+
+| Stacks |  A  |  B  |
+|--------|-----|-----|
+|        | not b|and c |
+
+</td><td>
+
+| Stacks | A | B |
+|--|--|--|
+|a| not b|and c |
+
+</td></tr> </table>
+
+
+| Stacks |   A   |   B   |
+| :---:  | :---: | :---: |
+|        |   ->  |  -38  |
+|        |   10  |       |
+|        |   7   |       |
+|        |   42  |       |
+
+| Stacks |   A   |   B   | 
+| :---:  | :---: | :---: |
+|        |       |  -38  |
+|   ->   |   7   |       |
+|   ->   |   10  |       |
+|        |   42  |       |
