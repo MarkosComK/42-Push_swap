@@ -1,42 +1,37 @@
-SRC_COMMON =
-
-SRC_SORTER =	./src/sorter/main.c \
-
-SRC_CHECKER =
-
-OBJS_COMMON	= ${SRC_COMMON:.c=.o}
-OBJS_SORTER		= ${SRC_SORTER:.c=.o}
-OBJS_CHECKER	= ${SRC_CHECKER:.c=.o}
-
-INCLUDE = ./src/include
-
-CFLAGS = -Wall -Wextra -Werror
-
 NAME = push_swap
-NAME_CHECKER = checker
-
-CC = gcc
+CC = cc
 RM = rm -f
+FLAGS = -Wall -Wextra -Werror -g
+LIBFTDIR = libft/
+OBJ_DIR = obj/
+SRC_DIR = srcs/
 
-all: ${NAME}
+SRC_1 = srcs/push_swap/push_swap.c \
+
+SRC_2 =
+
+OBJ_1 = ${SRC_1:.c=.o}
+OBJ_2 = ${SRC_2:.c=.o}
+
+INCLUDE = -L ./libft -lft
 
 .c.o:
-			${CC} ${CFLAGS} -I$(INCLUDE) -c $< -o ${<:.c=.o}
+	${CC} -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJS_COMMON) $(OBJS_SORTER)
-			${CC} $(CFLAGS) -I$(INCLUDE) -o $(NAME) $(OBJS_COMMON) $(OBJS_SORTER)
+${NAME}: ${OBJ_1} ${OBJ_2}
+	make -C $(LIBFTDIR)
+	${CC} ${FLAGS} ${OBJ_1} ${OBJ_2} -o ${NAME} ${INCLUDE}
 
-$(NAME_CHECKER): $(OBJS_COMMON) $(OBJS_CHECKER)
-			${CC} $(CFLAGS) -I$(INCLUDE) -o $(NAME_CHECKER) $(OBJS_COMMON) $(OBJS_CHECKER)
+all: ${NAME} ${BONUS}
 
 clean:
-			${RM} ${OBJS_COMMON} ${OBJS_SORTER} ${OBJS_CHECKER}
+	${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
+	@cd $(LIBFTDIR) && $(MAKE) clean
 
 fclean: clean
-			${RM} ${NAME} ${NAME_CHECKER}
+	${RM} ${NAME}
+	@cd $(LIBFTDIR) && $(MAKE) fclean
 
-re: fclean all
+re: clean all
 
-bonus: checker
-
-.PHONY:		checker bonus all clean fclean re
+.PHONY: all clean fclean re bonus
