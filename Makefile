@@ -45,11 +45,11 @@ all: ${NAME} ${BONUS}
 
 clean:
 	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
-	@cd $(LIBFTDIR) && $(MAKE) clean
+	@cd $(LIBFTDIR) && $(MAKE) --silent clean
 
 fclean: clean
 	@${RM} ${NAME}
-	@cd $(LIBFTDIR) && $(MAKE) fclean
+	@cd $(LIBFTDIR) && $(MAKE) --silent fclean
 
 re: clean all
 
