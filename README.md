@@ -187,3 +187,8 @@ Now go back to the beginning of our program running to wach again each step.
 - will use the operations provided in the subject (pa, pb, sa, sb...) to order them.
 
 This sould give you a god starting point to create your own push_swap. Remember, you wi`ll implement a sorting algorithm to use both stacks do what you have to. Try by your own, then come back here i you need to watch the next steps. I will update this README to help everyone. don not forget to give me a ⭐<strong>Star</strong>
+
+## Useful resources
+
+[!Algorithm](https://github.com/VBrazhnik/Push_swap/wiki/Algorithm)
+[!Article](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
