@@ -191,4 +191,4 @@ This sould give you a god starting point to create your own push_swap. Remember,
 ## Useful resources
 
 * [Algorithm](https://github.com/VBrazhnik/Push_swap/wiki/Algorithm)
-* [Article](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+* [Article - The least amount of moves with 2 stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
