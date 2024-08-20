@@ -2,7 +2,7 @@
 	📖 Pipex
 </h1>
 
-![push_swap](https://github.com/user-attachments/assets/5cb0dc2f-17c2-43e7-b00c-993fa4ef0789)
+![Push_swap](https://github.com/user-attachments/assets/e5de5dba-bfa2-4136-acb3-b2f0373e109a)
 
 <p align="center">
 	<b><i>Development repo for 42cursus Push_swap project</i></b><br>
