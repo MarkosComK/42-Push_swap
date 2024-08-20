@@ -14,6 +14,10 @@
 
 int	main(int ac, char **av)
 {
+	if (ac < 2)
+	{
+		ft_error();
+	}
 	ft_printf("starting");
 	return (0);
 }
