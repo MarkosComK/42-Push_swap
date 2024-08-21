@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:12:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 17:02:51 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:09:09 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack	*stack_exception(int size, char **content)
 	t_stack	*stack;
 	int		i;
 	int		j;
-	
+
 	stack = stack_new_node(ft_atoi(content[0]));
 	i = 1;
 	while (i < size)
@@ -37,7 +37,7 @@ t_stack	*stack_new(int ac, char **content)
 	t_stack	*stack;
 	int		i;
 	int		j;
-	
+
 	stack = stack_new_node(ft_atoi(content[1]));
 	i = 2;
 	while (i < ac)
@@ -51,7 +51,7 @@ t_stack	*stack_new(int ac, char **content)
 
 t_stack	*stack_add_head(t_stack **stack, int content)
 {
-	t_stack *new_node;
+	t_stack	*new_node;
 
 	new_node = stack_new_node(content);
 	if (!new_node)
@@ -63,7 +63,7 @@ t_stack	*stack_add_head(t_stack **stack, int content)
 
 t_stack	*stack_add_tail(t_stack **stack, int content)
 {
-	t_stack *new_node;
+	t_stack	*new_node;
 	t_stack	*last;
 
 	new_node = stack_new_node(content);
