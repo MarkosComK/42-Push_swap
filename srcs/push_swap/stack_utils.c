@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:37:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 18:16:22 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:34:23 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ int	stack_check_dup(t_stack *stack)
 		stack = stack->next;
 	}
 	return (0);
+}
+
+int	stack_sorted(t_stack *stack)
+{
+	int	i;
+
+	i = stack->nbr;
+	while (stack)
+	{
+		if (i > stack->nbr)
+			return (0);
+		i = stack->nbr;
+		stack = stack->next;
+	}
+	return (1);
 }
 
 t_stack	*stack_last(t_stack *stack)
