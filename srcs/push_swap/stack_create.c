@@ -6,11 +6,31 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:12:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 15:41:22 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 17:02:51 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+t_stack	*stack_exception(int size, char **content)
+{
+	t_stack	*stack;
+	int		i;
+	int		j;
+	
+	stack = stack_new_node(ft_atoi(content[0]));
+	i = 1;
+	while (i < size)
+	{
+		j = ft_atoi(content[i]);
+		stack_add_tail(&stack, j);
+		i++;
+	}
+	while (*content)
+		free(*content++);
+	free(content);
+	return (stack);
+}
 
 t_stack	*stack_new(int ac, char **content)
 {
