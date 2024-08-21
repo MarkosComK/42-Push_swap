@@ -6,23 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:01:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 19:28:04 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 20:17:56 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	print_stack(t_stack *stack)
-{
-	t_stack *current;
-
-	current = stack;
-	while (current)
-	{
-		ft_printf("%d\n", current->nbr);
-		current = current->next; 
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -44,7 +32,8 @@ int	main(int ac, char **av)
 		ft_error();
 	}
 	if (!stack_sorted(a))
-		stack_sort(a);
+		stack_sort(&a);
+	print_stack(a);
 	stack_free(a);
 	return (0);
 }
