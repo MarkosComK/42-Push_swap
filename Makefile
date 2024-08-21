@@ -20,6 +20,8 @@ SRC_1 = srcs/push_swap/push_swap.c \
 SRC_2 = srcs/push_swap/utils.c \
 		srcs/push_swap/stack_create.c \
 		srcs/push_swap/stack_utils.c \
+		srcs/push_swap/stack_free.c \
+
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
