@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/20 20:06:43 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:38:50 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ typedef struct s_stack
 }			t_stack;
 
 void	ft_error(void);
+
+t_stack	*stack_new(int ac, char **content);
+t_stack	*stack_new_node(int content);
+t_stack	*stack_add_head(t_stack **stack, int content);
+t_stack	*stack_add_tail(t_stack **stack, int content);
 
 #endif
