@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:01:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 18:37:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:28:04 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(int ac, char **av)
 		stack_free(a);
 		ft_error();
 	}
-	if (stack_sorted(a))
-		ft_printf("Stack is sorted");
+	if (!stack_sorted(a))
+		stack_sort(a);
 	stack_free(a);
 	return (0);
 }

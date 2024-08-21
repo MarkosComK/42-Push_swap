@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 18:33:53 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 19:28:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,13 @@ t_stack	*stack_new_node(int content);
 t_stack	*stack_add_head(t_stack **stack, int content);
 t_stack	*stack_add_tail(t_stack **stack, int content);
 t_stack	*stack_last(t_stack *stack);
+//stack_utils.c
 int		stack_check_dup(t_stack *stack);
 int		stack_sorted(t_stack *stack);
+int		stack_size(t_stack *stack);
 void	stack_free(t_stack *stack);
+//stack_sort.c
+void	stack_sort(t_stack *stack);
 //utils.c
 int		split_len(char	**tmp);
 
