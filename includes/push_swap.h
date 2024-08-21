@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 15:57:12 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 16:56:39 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,15 @@ typedef struct s_stack
 
 void	ft_error(void);
 
+//stack_create.c
 t_stack	*stack_new(int ac, char **content);
+t_stack	*stack_exception(int size, char **content);
 t_stack	*stack_new_node(int content);
 t_stack	*stack_add_head(t_stack **stack, int content);
 t_stack	*stack_add_tail(t_stack **stack, int content);
 t_stack	*stack_last(t_stack *stack);
 void	stack_free(t_stack *stack);
+//utils.c
+int		split_len(char	**tmp);
 
 #endif
