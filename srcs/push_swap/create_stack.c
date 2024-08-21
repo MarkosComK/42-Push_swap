@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:12:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 12:38:48 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:43:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*stack_new(int ac, char **content)
 	return (stack);
 }
 
-t_stack	*stack_add_head(t_stack **stack, void *content)
+t_stack	*stack_add_head(t_stack **stack, int content)
 {
 	t_stack *new_node;
 
