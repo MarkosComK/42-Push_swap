@@ -26,7 +26,7 @@ OBJ_2 = ${SRC_2:.c=.o}
 INCLUDE = -L ./libft -lft
 
 .c.o:
-	@${CC} -c $< -o ${<:.c=.o}
+	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJ_1} ${OBJ_2}
 	@make --silent -C $(LIBFTDIR)
