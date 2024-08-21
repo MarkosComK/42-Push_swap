@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:12:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 15:06:25 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:29:34 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,13 @@ t_stack	*stack_new(int ac, char **content)
 	int		i;
 	int		j;
 	
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	i = 1;
-	j = 1;
+	stack = stack_new_node(ft_atoi(content[1]));
+	i = 2;
 	while (i < ac)
 	{
-		int value = ft_atoi(content[j]);
-		if (i == 1)
-			stack = stack_new_node(value);
-		else
-			stack_add_tail(&stack, value);
+		j = ft_atoi(content[i]);
+		stack_add_tail(&stack, j);
 		i++;
-		j++;
 	}
 	return (stack);
 }
@@ -37,29 +32,38 @@ t_stack	*stack_new(int ac, char **content)
 t_stack	*stack_add_head(t_stack **stack, int content)
 {
 	t_stack *new_node;
-	(void) content;
 
 	new_node = stack_new_node(content);
 	if (!new_node)
 		return (NULL);
 	new_node->next = *stack;
-	if (*stack)
-		(*stack)->prev = new_node;
-	(*stack) = new_node;
+	(*stack)->prev = new_node;
 	return (new_node);
 }
 
 t_stack	*stack_add_tail(t_stack **stack, int content)
 {
 	t_stack *new_node;
+	t_stack	*last;
 
 	new_node = stack_new_node(content);
 	if (!new_node)
 		return (NULL);
-	(*stack)->next = new_node;
+	last = stack_last(*stack);
+	last->next = new_node;
 	new_node->prev = (*stack);
 	return (new_node);
 }
+
+t_stack	*stack_last(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
+}
+
 
 t_stack	*stack_new_node(int content)
 {
