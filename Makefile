@@ -16,6 +16,7 @@ OBJ_DIR = obj/
 SRC_DIR = srcs/
 
 SRC_1 = srcs/push_swap/push_swap.c \
+		srcs/push_swap/create_stack.c \
 
 SRC_2 = srcs/push_swap/utils.c \
 
