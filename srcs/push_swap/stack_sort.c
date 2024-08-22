@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:29:18 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:49:38 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	stack_sort(t_stack **stack_a)
 	else
 	{
 		stack_sort_b(stack_a, &stack_b);
-		print_stack(*stack_a);
 	}
 	stack_free(stack_b);
 }
@@ -38,10 +37,6 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 
 void	stack_sort_tree(t_stack **stack_a)
 {
-	if (stack_n_is_min(*stack_a))
-		ft_printf("min value is: %i\n", (*stack_a)->nbr);
-	if (stack_n_is_max(*stack_a))
-		ft_printf("max value is: %i\n", (*stack_a)->nbr);
 	while (!stack_sorted(*stack_a))
 	{
 		if (stack_n_is_min(*stack_a))
