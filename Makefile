@@ -22,6 +22,7 @@ SRC_2 = srcs/push_swap/utils.c \
 		srcs/push_swap/stack_utils.c \
 		srcs/push_swap/stack_free.c \
 		srcs/push_swap/stack_sort.c \
+		srcs/push_swap/stack_utils_values.c \
 		srcs/push_swap/swap.c \
 		srcs/push_swap/push.c \
 		srcs/push_swap/rotate.c \
