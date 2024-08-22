@@ -6,45 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:37:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 16:00:36 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:03:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	stack_n_is_min(t_stack *stack)
-{
-	int		size;
-	t_stack	*tmp;
-
-	size = stack_size(stack);
-	tmp = stack;
-	while (size > 1)
-	{
-		if (tmp->nbr > stack->next->nbr)
-			return (0);
-		stack = stack->next;
-		size -= 1;
-	}
-	return (1);
-}
-
-int	stack_n_is_max(t_stack *stack)
-{
-	int		size;
-	t_stack	*tmp;
-
-	size = stack_size(stack);
-	tmp = stack;
-	while (size > 1)
-	{
-		if (tmp->nbr < stack->next->nbr)
-			return (0);
-		stack = stack->next;
-		size -= 1;
-	}
-	return (1);
-}
 
 int	stack_check_dup(t_stack *stack)
 {

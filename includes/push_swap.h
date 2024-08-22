@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 16:12:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:52:57 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,15 @@ t_stack	*stack_add_head(t_stack **stack, int content);
 t_stack	*stack_add_tail(t_stack **stack, int content);
 t_stack	*stack_last(t_stack *stack);
 //stack_utils.c
-int		stack_n_is_min(t_stack *stack);
-int		stack_n_is_max(t_stack *stack);
 int		stack_check_dup(t_stack *stack);
 int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 void	stack_free(t_stack *stack);
+//stack_utils_values.c
+int		stack_min(t_stack *stack);
+int		stack_max(t_stack *stack);
+int		stack_n_is_min(t_stack *stack);
+int		stack_n_is_max(t_stack *stack);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
