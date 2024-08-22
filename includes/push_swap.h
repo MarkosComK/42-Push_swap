@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 12:19:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:05:10 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	stack_free(t_stack *stack);
 void	stack_sort(t_stack **stack);
 //swap.c
 void	swap(t_stack **stack, int move);
+//push.c
+void	push(t_stack **stack_1, t_stack **stack_2, int move);
 //utils.c
 void	print_stack(t_stack *stack);
 int		split_len(char	**tmp);
