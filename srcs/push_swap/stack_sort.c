@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 15:59:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:02:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	while (!stack_sorted(*stack_a) && stack_size(*stack_a) > 3)
 	{
+		if (stack_n_is_min(*stack_a))
+			ft_printf("min value is: %i\n", (*stack_a)->nbr);
 		push(stack_a, stack_b, PB);
 	}
 	stack_sort_tree(stack_a);
