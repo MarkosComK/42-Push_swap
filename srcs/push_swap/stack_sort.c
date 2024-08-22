@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 13:11:42 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:15:53 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	stack_sort(t_stack **stack_a)
 {
@@ -25,7 +25,9 @@ void	stack_sort(t_stack **stack_a)
 		push(stack_a, &stack_b, PB);
 		push(stack_a, &stack_b, PB);
 		swap(&stack_b, SB);
+		swap(stack_a, SB);
 		print_stack(stack_b);
+		print_stack(*stack_a);
 	}
 	stack_free(stack_b);
 }

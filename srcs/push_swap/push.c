@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 13:04:46 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:16:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	push(t_stack **stack_1, t_stack **stack_2, int move)
 {

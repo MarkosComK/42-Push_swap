@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:44:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 15:59:36 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:17:16 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	stack_free(t_stack *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:12:36 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 12:27:12 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:17:08 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stack_exception(int size, char **content)
 {
