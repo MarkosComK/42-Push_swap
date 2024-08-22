@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 13:06:50 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:10:30 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void	stack_sort(t_stack **stack_a)
 	else
 	{
 		push(stack_a, &stack_b, PB);
+		push(stack_a, &stack_b, PB);
+		swap(&stack_b, SB);
 		print_stack(stack_b);
-		print_stack(*stack_a);
-		push(&stack_b, stack_a, PA);
-		print_stack(*stack_a);
 	}
 }
