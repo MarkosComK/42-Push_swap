@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 13:10:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:11:42 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	stack_sort(t_stack **stack_a)
 		swap(&stack_b, SB);
 		print_stack(stack_b);
 	}
+	stack_free(stack_b);
 }
