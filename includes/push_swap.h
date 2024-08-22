@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 17:52:57 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:20:31 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 #define PB 5
 #define RA 6
 #define RB 7
+#define RRA 8
+#define RRB 9
 
 typedef struct s_stack
 {
@@ -64,6 +66,7 @@ void	swap(t_stack **stack, int move);
 void	push(t_stack **stack_1, t_stack **stack_2, int move);
 //rotate.c
 void	rotate(t_stack **stack, int move);
+void	r_rotate(t_stack **stack, int move);
 //utils.c
 void	print_stack(t_stack *stack);
 int		split_len(char	**tmp);

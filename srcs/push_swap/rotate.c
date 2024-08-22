@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 16:10:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 17:01:59 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:20:48 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,31 @@ void	rotate(t_stack **stack, int move)
 		write(1, "ra\n", 3);
 	if (move == RB)
 		write(1, "rb\n", 3);
+}
+
+void	r_rotate(t_stack **stack, int move)
+{
+	t_stack	*tmp;
+	int		i;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	i = 0;
+	tmp = *stack;
+	while ((*stack)->next)
+	{
+		*stack = (*stack)->next;
+		i++;
+	}
+	(*stack)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (move == RRA)
+		write(1, "rra\n", 4);
+	if (move == RRB)
+		write(1, "rra\n", 4);
 }

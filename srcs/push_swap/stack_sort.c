@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:03:15 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:24:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	stack_sort_tree(t_stack **stack_a)
 			if (!stack_sorted(*stack_a))
 				swap(stack_a, SA);
 		}
-		else if ((*stack_a)->nbr < stack_n_is_min(*stack_a))
+		else if ((*stack_a)->nbr > (*stack_a)->next->nbr)
 			swap(stack_a, SA);
+		else if ((*stack_a)->nbr < (*stack_a)->next->nbr)
+			r_rotate(stack_a, RRA);
 	}
 }
