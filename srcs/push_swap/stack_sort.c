@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:24:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:29:18 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	stack_sort(t_stack **stack_a)
 	t_stack	*stack_b;
 
 	stack_b = NULL;
-
 	if (stack_size(*stack_a) == 2)
 		swap(stack_a, SA);
 	else

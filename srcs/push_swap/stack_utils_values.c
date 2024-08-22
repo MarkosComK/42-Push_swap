@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:45:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:03:10 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:29:42 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,3 @@ int	stack_n_is_max(t_stack *stack)
 	}
 	return (1);
 }
-

@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:20:31 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:30:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 # include <stdbool.h>
 # include "../libft/libft.h"
 
-#define SA 1
-#define SB 2
-#define PA 4
-#define PB 5
-#define RA 6
-#define RB 7
-#define RRA 8
-#define RRB 9
+# define SA 1
+# define SB 2
+# define PA 4
+# define PB 5
+# define RA 6
+# define RB 7
+# define RRA 8
+# define RRB 9
 
 typedef struct s_stack
 {

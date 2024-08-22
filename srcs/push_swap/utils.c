@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:01:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 14:21:24 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:28:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	print_stack(t_stack *stack)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	current = stack;
 	while (current)
 	{
 		ft_printf("%d\n", current->nbr);
-		current = current->next; 
+		current = current->next;
 	}
 }
 
