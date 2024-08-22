@@ -24,6 +24,7 @@ SRC_2 = srcs/push_swap/utils.c \
 		srcs/push_swap/stack_sort.c \
 		srcs/push_swap/swap.c \
 		srcs/push_swap/push.c \
+		srcs/push_swap/rotate.c \
 
 
 OBJ_1 = ${SRC_1:.c=.o}

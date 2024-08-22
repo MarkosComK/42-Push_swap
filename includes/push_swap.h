@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 15:47:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:12:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 #define SB 2
 #define PA 4
 #define PB 5
+#define RA 6
+#define RB 7
 
 typedef struct s_stack
 {
@@ -57,6 +59,8 @@ void	stack_sort_tree(t_stack **stack_a);
 void	swap(t_stack **stack, int move);
 //push.c
 void	push(t_stack **stack_1, t_stack **stack_2, int move);
+//rotate.c
+void	rotate(t_stack **stack, int move);
 //utils.c
 void	print_stack(t_stack *stack);
 int		split_len(char	**tmp);

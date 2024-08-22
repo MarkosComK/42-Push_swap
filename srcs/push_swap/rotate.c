@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 19:36:11 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 16:38:09 by marsoare         ###   ########.fr       */
+/*   Created: 2024/08/22 16:10:43 by marsoare          #+#    #+#             */
+/*   Updated: 2024/08/22 17:01:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack, int move)
+void	rotate(t_stack **stack, int move)
 {
 	t_stack	*tmp;
 
 	if (!*stack|| !((*stack)->next))
 		return ;
 	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = (*stack)->next;
+	*stack = stack_last(*stack);
 	(*stack)->next = tmp;
-	if (move == SA)
-		write(1, "sa\n", 3);
-	if (move == SB)
-		write(1, "sb\n", 3);
+	*stack = tmp->next;
+	tmp->next = NULL;
+	if (move == RA)
+		write(1, "ra\n", 3);
+	if (move == RB)
+		write(1, "rb\n", 3);
 }
