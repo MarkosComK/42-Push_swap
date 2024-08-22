@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 16:10:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:20:48 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:26:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rotate(t_stack **stack, int move)
 {
 	t_stack	*tmp;
 
-	if (!*stack|| !((*stack)->next))
+	if (!*stack || !((*stack)->next))
 		return ;
 	tmp = *stack;
 	*stack = stack_last(*stack);
