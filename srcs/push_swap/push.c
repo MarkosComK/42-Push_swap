@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sort.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 12:19:23 by marsoare         ###   ########.fr       */
+/*   Created: 2024/08/22 11:53:33 by marsoare          #+#    #+#             */
+/*   Updated: 2024/08/22 12:16:50 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	stack_sort(t_stack **stack_a)
+void	push(t_stack *stack_1, t_stack *stack_2, int move)
 {
-	t_stack	*stack_b;
-
-	stack_b = (t_stack *)malloc(sizeof(t_stack));
-	if (stack_size(*stack_a) == 2)
-		swap(stack_a, SA);
-	else
-	{
-		stack_b = stack_sort_b();
-	}
+	if (move == PA)
+		write(1, "pa\n", 3);
+	if (move == PB)
+		write(1, "pb\n", 3);
 }

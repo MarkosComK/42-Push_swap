@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/21 20:25:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/22 12:19:16 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include "../libft/libft.h"
+
+#define SA 1
+#define SB 2
+#define PA 4
+#define PB 5
 
 typedef struct s_stack
 {
@@ -45,7 +50,7 @@ void	stack_free(t_stack *stack);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 //swap.c
-void	swap_a(t_stack **stack);
+void	swap(t_stack **stack, int move);
 //utils.c
 void	print_stack(t_stack *stack);
 int		split_len(char	**tmp);
