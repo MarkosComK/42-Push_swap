@@ -27,3 +27,21 @@ void	swap(t_stack **stack, int move)
 	if (move == SB)
 		write(1, "sb\n", 3);
 }
+
+void	swap_swap(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
+		return ;
+	tmp_a = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp_a->next = (*stack_a)->next;
+	(*stack_a)->next = tmp_a;
+	tmp_b = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp_b->next = (*stack_b)->next;
+	(*stack_b)->next = tmp_b;
+	write(1, "ss\n", 3);
+}

@@ -59,9 +59,11 @@ int		stack_n_is_max(t_stack *stack);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
+void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_tree(t_stack **stack_a);
 //swap.c
 void	swap(t_stack **stack, int move);
+void	swap_swap(t_stack **stack_a, t_stack **stack_b);
 //push.c
 void	push(t_stack **stack_1, t_stack **stack_2, int move);
 //rotate.c
