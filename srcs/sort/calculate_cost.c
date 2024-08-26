@@ -73,21 +73,19 @@ int	index_of(int number, t_stack *stack)
 	return (index);
 }
 
-int	find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b)
+t_cost_index	*find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b)
 {
-    int	cost = 999; // Initialize cost to a high value
-    int	best_index = -1;
-    int	i;
+	t_cost_index *cost_index = malloc(sizeof(t_cost_index));
+	cost_index->cost = 999;
     t_stack *tmp = *stack_a;
 
-    for (i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
         int current_cost = calculate_cost(tmp, stack_b) + i;
-        if (current_cost != -1 && current_cost < cost) {
-            cost = current_cost;
-            best_index = cost;
-			ft_printf("number is %i\n", tmp->nbr);
+        if (current_cost != -1 && current_cost < cost_index->cost) {
+            cost_index->cost = current_cost;
+			cost_index->index = i;
         }
         tmp = tmp->next;
     }
-    return best_index;
+    return cost_index;
 }

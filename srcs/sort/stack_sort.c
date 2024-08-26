@@ -28,37 +28,37 @@ void	stack_sort(t_stack **stack_a)
 
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int	cost;
+	t_cost_index	*cost_index = NULL;
 	int	i = 0;
 	push(stack_a, stack_b, PB);
 	push(stack_a, stack_b, PB);
 	print_stacks(*stack_a, *stack_b);
 	while (stack_size(*stack_a) > 3 && i < 5)
 	{
-		cost = find_lowest_cost_move(stack_a, stack_b);
-		ft_printf("lowest cost index from first three is: %i\n", cost);
-		if (cost == 1 && index_of((*stack_a)->nbr, *stack_a) == 0)
+		cost_index = find_lowest_cost_move(stack_a, stack_b);
+		ft_printf("cost: %i index: %i\n", cost_index->cost, cost_index->index);
+		if (cost_index->cost == 1 && index_of((*stack_a)->nbr, *stack_a) == 0)
 			push(stack_a, stack_b, PB);
-		else if (cost == 2 && (*stack_a)->nbr < stack_min(*stack_b) &&
+		else if (cost_index->cost == 2 && (*stack_a)->nbr < stack_min(*stack_b) &&
 			stack_min(*stack_b) == stack_last(*stack_b)->nbr)
 		{
 			push(stack_a, stack_b, PB);
 			rotate(stack_b, RB);
 		}
-		else if (cost == 2 && index_of(get_number_below(
+		else if (cost_index->cost == 2 && index_of(get_number_below(
 			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) < 3)
 		{
 			rotate(stack_b, RB);
 			push(stack_a, stack_b, PB);
 		}
-		else if (cost == 2 && index_of(get_number_below(
+		else if (cost_index->cost == 2 && index_of(get_number_below(
 			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) >= 3)
 		{
 			push(stack_a, stack_b, PB);
 			swap(stack_b, SB);
 		}
 		print_stacks(*stack_a, *stack_b);
-		cost = -1;
+		cost_index->cost = -1;
 		i++;
 	}
 	/*

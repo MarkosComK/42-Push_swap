@@ -38,6 +38,12 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }			t_stack;
 
+typedef struct s_cost_index
+{
+	int	cost;
+	int	index;
+}			t_cost_index;
+
 void	ft_error(void);
 
 //srcs/operations/
@@ -57,7 +63,7 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 int		calculate_cost(t_stack *stack_a, t_stack **stack_b);
 int		get_number_below(int number, t_stack *stack);
 int		index_of(int number, t_stack *stack);
-int		find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b);
+t_cost_index	*find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
