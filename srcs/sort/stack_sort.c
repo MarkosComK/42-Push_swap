@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:51:39 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:09:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,24 @@ void	stack_sort(t_stack **stack_a)
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	while (!stack_sorted(*stack_a) && stack_size(*stack_a) > 3)
+	{
 		push(stack_a, stack_b, PB);
+		ft_printf("cost of number: %i is %i\n", (*stack_a)->nbr, calculate_cost(stack_a, stack_b));
+	}
 	if (stack_size(*stack_b) > 0)
 		stack_sort_ten(stack_a, stack_b);
-	print_stack(*stack_b);
-	stack_sort_tree(stack_a);
+	//print_stack(*stack_a);
+	//print_stack(*stack_b);
+	//stack_sort_tree(stack_a);
 }
 
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_sort_tree(stack_a);
-	int	i = 0;
-	while(stack_size(*stack_b) > 0 && i < 1)
+	//stack_sort_tree(stack_a);
+	(void) stack_b;
+	while(stack_size(*stack_a) > 3)
 	{
-		reverse_rotate(stack_b, RRA);
-		i++;
+		ft_printf("pushing number: %i - \n", (*stack_a)->nbr);
 	}
 }
 

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   calculate_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 11:53:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/26 14:10:58 by marsoare         ###   ########.fr       */
+/*   Created: 2024/08/26 13:14:06 by marsoare          #+#    #+#             */
+/*   Updated: 2024/08/26 13:52:05 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **stack_1, t_stack **stack_2, int move)
+int	calculate_cost(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
+	int	cost;
+	int	max_nbr;
 
-	if (!*stack_1)
-		return ;
-	tmp = *stack_2;
-	*stack_2 = *stack_1;
-	*stack_1 = (*stack_1)->next;
-	(*stack_2)->next = tmp;
-	if (move == PA)
-		write(1, "pa\n", 3);
-	if (move == PB)
-		write(1, "pb\n", 3);
+	cost = -1;
+	max_nbr = stack_max(*stack_b);
+	if ((*stack_a)->nbr > max_nbr && max_nbr == (*stack_b)->nbr)
+		cost = 1;
+	//ft_printf("pushing number: %i\n", (*stack_a)->nbr);
+	//ft_printf("biggest value in B: %i\n", stack_max(*stack_b));
+	return (cost);
 }

@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:30:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:33:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack
 {
 	long			nbr;
 	long			index;
+	long			biggest;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }			t_stack;
@@ -52,6 +53,8 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 //srcs/sort
+//calculate_cost.c
+int		calculate_cost(t_stack **stack_a, t_stack **stack_b);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
