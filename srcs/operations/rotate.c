@@ -73,3 +73,41 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 	tmp->next = NULL;
 	write(1, "rr\n", 3);
 }
+
+void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+	int		i;
+
+	if (!*stack_a || !((*stack_b)->next) || !*stack_b || ((*stack_b)->next))
+		return ;
+	i = 0;
+	tmp = *stack_a;
+	while ((*stack_a)->next)
+	{
+		*stack_a = (*stack_a)->next;
+		i++;
+	}
+	(*stack_a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	i = 0;
+	tmp = *stack_b;
+	while ((*stack_b)->next)
+	{
+		*stack_b = (*stack_b)->next;
+		i++;
+	}
+	(*stack_b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	write(1, "rrr\n", 4);
+}
