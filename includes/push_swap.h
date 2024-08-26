@@ -47,7 +47,7 @@ void	swap_swap(t_stack **stack_a, t_stack **stack_b);
 void	push(t_stack **stack_1, t_stack **stack_2, int move);
 //rotate.c
 void	rotate(t_stack **stack, int move);
-void	r_rotate(t_stack **stack, int move);
+void	reverse_rotate(t_stack **stack, int move);
 
 //srcs/sort
 //stack_sort.c

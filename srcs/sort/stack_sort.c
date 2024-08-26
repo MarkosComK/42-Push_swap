@@ -64,6 +64,6 @@ void	stack_sort_tree(t_stack **stack_a)
 		else if ((*stack_a)->nbr > (*stack_a)->next->nbr)
 			swap(stack_a, SA);
 		else if ((*stack_a)->nbr < (*stack_a)->next->nbr)
-			r_rotate(stack_a, RRA);
+			reverse_rotate(stack_a, RRA);
 	}
 }
