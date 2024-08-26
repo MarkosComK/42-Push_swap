@@ -30,8 +30,11 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	while (!stack_sorted(*stack_a) && stack_size(*stack_a) > 3)
 	{
-		push(stack_a, stack_b, PB);
 		ft_printf("cost of number: %i is %i\n", (*stack_a)->nbr, calculate_cost(stack_a, stack_b));
+		ft_printf("the number below %i is %i\n",
+			(*stack_a)->nbr, get_number_below((*stack_a)->nbr, *stack_b));
+		print_stacks(*stack_a, *stack_b);
+		push(stack_a, stack_b, PB);
 	}
 	if (stack_size(*stack_b) > 0)
 		stack_sort_ten(stack_a, stack_b);

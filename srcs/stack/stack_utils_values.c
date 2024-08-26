@@ -16,6 +16,8 @@ int	stack_min(t_stack *stack)
 {
 	int	value;
 
+	if (!stack)
+		return (-1);
 	value = stack->nbr;
 	while (stack)
 	{
@@ -30,6 +32,8 @@ int	stack_max(t_stack *stack)
 {
 	int	value;
 
+	if (!stack)
+		return (-1);
 	value = stack->nbr;
 	while (stack)
 	{

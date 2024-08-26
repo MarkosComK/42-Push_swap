@@ -55,6 +55,8 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 //srcs/sort
 //calculate_cost.c
 int		calculate_cost(t_stack **stack_a, t_stack **stack_b);
+int		get_number_below(int number, t_stack *stack);
+int		index_of(int number, t_stack *stack);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
@@ -83,6 +85,7 @@ int		stack_n_is_max(t_stack *stack);
 //srcs/utils
 //utils.c
 void	print_stack(t_stack *stack);
+void print_stacks(t_stack *stack1, t_stack *stack2);
 int		split_len(char	**tmp);
 
 #endif
