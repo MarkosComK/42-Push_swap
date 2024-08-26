@@ -28,14 +28,60 @@ void	stack_sort(t_stack **stack_a)
 
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
-	while (!stack_sorted(*stack_a) && stack_size(*stack_a) > 3)
+	while (stack_size(*stack_a) > 0)
 	{
-		ft_printf("cost of number: %i is %i\n", (*stack_a)->nbr, calculate_cost(stack_a, stack_b));
-		ft_printf("the number below %i is %i\n",
-			(*stack_a)->nbr, get_number_below((*stack_a)->nbr, *stack_b));
+		if (calculate_cost(stack_a, stack_b) == -1)
+		{
+			ft_printf("operation is PB\n");
+			push(stack_a, stack_b, PB);
+		}
+		else if (calculate_cost(stack_a, stack_b) == 1 && index_of((*stack_a)->nbr , *stack_a) == 1)
+		{
+			ft_printf("operation is PB\n");
+			push(stack_a, stack_b, PB);
+		}
+		else if (calculate_cost(stack_a, stack_b) == 2 &&
+		(*stack_a)->nbr < stack_min(*stack_b) && stack_min(*stack_b) == 
+		stack_last(*stack_b)->nbr)
+		{
+			ft_printf("operations is PB + RB\n");
+			push(stack_a, stack_b, PB);
+			rotate(stack_b, RB);
+		}
+		else if (calculate_cost(stack_a, stack_b) == 2 &&
+		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 2)
+		{
+			ft_printf("operation is PB + SB\n");
+			push(stack_a, stack_b, PB);
+			swap(stack_b, SB);
+		}
+		else if (calculate_cost(stack_a, stack_b) == 4 &&
+		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 3)
+		{
+			ft_printf("operation is RB + RB");
+			rotate(stack_b, RB);
+			push(stack_a, stack_b, PB);
+			rotate(stack_b, RB);
+			reverse_rotate(stack_b, RRB);
+		}
+		else if (calculate_cost(stack_a, stack_b) == 7 &&
+			index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) ==
+		index_of(stack_last(*stack_b)->nbr, *stack_b) - 1)
+		{
+			ft_printf("operation is RRB + PB + SB + RB + RB\n");
+			reverse_rotate(stack_b, RRB);
+			reverse_rotate(stack_b, RRB);
+			push(stack_a, stack_b, PB);
+			swap(stack_b, SB);
+			rotate(stack_b, RB);
+			rotate(stack_b, RB);
+			rotate(stack_b, RB);
+		}
+		else
+			push(stack_a, stack_b, PB);
 		print_stacks(*stack_a, *stack_b);
-		push(stack_a, stack_b, PB);
 	}
+	print_stacks(*stack_a, *stack_b);
 	if (stack_size(*stack_b) > 0)
 		stack_sort_ten(stack_a, stack_b);
 	//print_stack(*stack_a);

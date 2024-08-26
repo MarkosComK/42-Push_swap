@@ -31,12 +31,12 @@ int	calculate_cost(t_stack **stack_a, t_stack **stack_b)
 		cost = 2; // PB + SB
 	else if (index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 3)
 	{
-		cost = 4; // RB + RB;
+		cost = 5; // RB + PB + RB + RRB + RRB;
 		ft_printf("\nbelow the top item\n");
 }
 	else if (index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) ==
 		index_of(stack_last(*stack_b)->nbr, *stack_b) - 1)
-		cost = 5; // RRB + PB + SB + RB + RB;
+		cost = 7; // RRB + RRB + PB + SB + RB + RB + RB;
 	
 	//ft_printf("pushing number: %i\n", (*stack_a)->nbr);
 	//ft_printf("biggest value in B: %i\n", stack_max(*stack_b));
