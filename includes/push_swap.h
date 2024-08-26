@@ -54,9 +54,10 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 //srcs/sort
 //calculate_cost.c
-int		calculate_cost(t_stack **stack_a, t_stack **stack_b);
+int		calculate_cost(t_stack *stack_a, t_stack **stack_b);
 int		get_number_below(int number, t_stack *stack);
 int		index_of(int number, t_stack *stack);
+int		find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b);
 //stack_sort.c
 void	stack_sort(t_stack **stack);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);

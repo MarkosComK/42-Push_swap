@@ -57,7 +57,7 @@ void	reverse_rotate(t_stack **stack, int move)
 	if (move == RRA)
 		write(1, "rra\n", 4);
 	if (move == RRB)
-		write(1, "rra\n", 4);
+		write(1, "rrb\n", 4);
 }
 
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)

@@ -28,6 +28,63 @@ void	stack_sort(t_stack **stack_a)
 
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
+	int	cost;
+	int	i = 0;
+	push(stack_a, stack_b, PB);
+	push(stack_a, stack_b, PB);
+	print_stacks(*stack_a, *stack_b);
+	while (stack_size(*stack_a) > 3 && i < 5)
+	{
+		cost = find_lowest_cost_move(stack_a, stack_b);
+		ft_printf("lowest cost index from first three is: %i\n", cost);
+		if (cost == 1 && index_of((*stack_a)->nbr, *stack_a) == 0)
+			push(stack_a, stack_b, PB);
+		else if (cost == 2 && (*stack_a)->nbr < stack_min(*stack_b) &&
+			stack_min(*stack_b) == stack_last(*stack_b)->nbr)
+		{
+			push(stack_a, stack_b, PB);
+			rotate(stack_b, RB);
+		}
+		else if (cost == 2 && index_of(get_number_below(
+			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) < 3)
+		{
+			rotate(stack_b, RB);
+			push(stack_a, stack_b, PB);
+		}
+		else if (cost == 2 && index_of(get_number_below(
+			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) >= 3)
+		{
+			push(stack_a, stack_b, PB);
+			swap(stack_b, SB);
+		}
+		print_stacks(*stack_a, *stack_b);
+		cost = -1;
+		i++;
+	}
+	/*
+	int	i;
+	int	cost = 100;
+	int	current_cost = 100;
+	int	best_index = -1;
+	t_stack	*tmp;
+
+	i = 0;
+	tmp = *stack_a;
+	print_stacks(*stack_a, *stack_b);
+	while (i < 3)
+	{
+		current_cost = calculate_cost(tmp, stack_b);
+		if (current_cost != -1 && current_cost < cost)
+		{
+			cost = current_cost;
+			best_index = i;
+		}
+		ft_printf("number is %i\n", (tmp)->nbr);
+		(tmp) = (tmp)->next;
+		i++;
+	}
+	*/
+	/*
 	while (stack_size(*stack_a) > 0)
 	{
 		if (calculate_cost(stack_a, stack_b) == -1)
@@ -49,14 +106,14 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 			rotate(stack_b, RB);
 		}
 		else if (calculate_cost(stack_a, stack_b) == 2 &&
-		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 2)
+		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 1)
 		{
 			ft_printf("operation is PB + SB\n");
 			push(stack_a, stack_b, PB);
 			swap(stack_b, SB);
 		}
 		else if (calculate_cost(stack_a, stack_b) == 4 &&
-		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 3)
+		index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) == 2)
 		{
 			ft_printf("operation is RB + RB");
 			rotate(stack_b, RB);
@@ -80,9 +137,9 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 			push(stack_a, stack_b, PB);
 		print_stacks(*stack_a, *stack_b);
 	}
-	print_stacks(*stack_a, *stack_b);
-	if (stack_size(*stack_b) > 0)
-		stack_sort_ten(stack_a, stack_b);
+	*/
+	//if (stack_size(*stack_b) > 0)
+		//stack_sort_ten(stack_a, stack_b);
 	//print_stack(*stack_a);
 	//print_stack(*stack_b);
 	//stack_sort_tree(stack_a);
