@@ -32,6 +32,7 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 		push(stack_a, stack_b, PB);
 	if (stack_size(*stack_b) > 0)
 		stack_sort_ten(stack_a, stack_b);
+	print_stack(*stack_b);
 	stack_sort_tree(stack_a);
 }
 
@@ -39,9 +40,9 @@ void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b)
 {
 	stack_sort_tree(stack_a);
 	int	i = 0;
-	while(stack_size(*stack_b) > 0 && i < 2)
+	while(stack_size(*stack_b) > 0 && i < 1)
 	{
-		swap_swap(stack_a, stack_b);
+		reverse_rotate(stack_b, RRA);
 		i++;
 	}
 }
