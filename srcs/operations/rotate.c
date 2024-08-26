@@ -60,7 +60,7 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
 
-	if (!*stack_a || !((*stack_b)->next) || !*stack_b || ((*stack_b)->next))
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || ((*stack_b)->next))
 		return ;
 	tmp = *stack_a;
 	*stack_a = stack_last(*stack_a);
