@@ -15,18 +15,9 @@ LIBFTDIR = libft/
 OBJ_DIR = obj/
 SRC_DIR = srcs/
 
-SRC_1 = srcs/push_swap/push_swap.c \
+SRC_1 = $(wildcard srcs/*.c)
 
-SRC_2 = srcs/push_swap/utils.c \
-		srcs/push_swap/stack_create.c \
-		srcs/push_swap/stack_utils.c \
-		srcs/push_swap/stack_free.c \
-		srcs/push_swap/stack_sort.c \
-		srcs/push_swap/stack_utils_values.c \
-		srcs/push_swap/swap.c \
-		srcs/push_swap/push.c \
-		srcs/push_swap/rotate.c \
-
+SRC_2 = $(wildcard srcs/*/*.c) \
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
