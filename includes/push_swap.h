@@ -39,28 +39,7 @@ typedef struct s_stack
 
 void	ft_error(void);
 
-//stack_create.c
-t_stack	*stack_new(int ac, char **content);
-t_stack	*stack_exception(int size, char **content);
-t_stack	*stack_new_node(int content);
-t_stack	*stack_add_head(t_stack **stack, int content);
-t_stack	*stack_add_tail(t_stack **stack, int content);
-t_stack	*stack_last(t_stack *stack);
-//stack_utils.c
-int		stack_check_dup(t_stack *stack);
-int		stack_sorted(t_stack *stack);
-int		stack_size(t_stack *stack);
-void	stack_free(t_stack *stack);
-//stack_utils_values.c
-int		stack_min(t_stack *stack);
-int		stack_max(t_stack *stack);
-int		stack_n_is_min(t_stack *stack);
-int		stack_n_is_max(t_stack *stack);
-//stack_sort.c
-void	stack_sort(t_stack **stack);
-void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
-void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
-void	stack_sort_tree(t_stack **stack_a);
+//srcs/operations/
 //swap.c
 void	swap(t_stack **stack, int move);
 void	swap_swap(t_stack **stack_a, t_stack **stack_b);
@@ -69,6 +48,34 @@ void	push(t_stack **stack_1, t_stack **stack_2, int move);
 //rotate.c
 void	rotate(t_stack **stack, int move);
 void	r_rotate(t_stack **stack, int move);
+
+//srcs/sort
+//stack_sort.c
+void	stack_sort(t_stack **stack);
+void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
+void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
+void	stack_sort_tree(t_stack **stack_a);
+
+//srcs/stack
+//stack_create.c
+t_stack	*stack_exception(int size, char **content);
+t_stack	*stack_new(int ac, char **content);
+t_stack	*stack_add_head(t_stack **stack, int content);
+t_stack	*stack_add_tail(t_stack **stack, int content);
+t_stack	*stack_new_node(int content);
+//stack_free.c
+void	stack_free(t_stack *stack);
+//stack_utils.c
+int		stack_check_dup(t_stack *stack);
+int		stack_sorted(t_stack *stack);
+int		stack_size(t_stack *stack);
+t_stack	*stack_last(t_stack *stack);
+//stack_utils_values.c
+int		stack_min(t_stack *stack);
+int		stack_max(t_stack *stack);
+int		stack_n_is_min(t_stack *stack);
+int		stack_n_is_max(t_stack *stack);
+//srcs/utils
 //utils.c
 void	print_stack(t_stack *stack);
 int		split_len(char	**tmp);
