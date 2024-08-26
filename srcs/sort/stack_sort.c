@@ -68,11 +68,10 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 			index_of(get_number_below((*stack_a)->nbr, *stack_b), *stack_b) ==
 		index_of(stack_last(*stack_b)->nbr, *stack_b) - 1)
 		{
-			ft_printf("operation is RRB + PB + SB + RB + RB\n");
+			ft_printf("operation is RRB + RRB + PB + SB + RB + RB + RB\n");
 			reverse_rotate(stack_b, RRB);
 			reverse_rotate(stack_b, RRB);
 			push(stack_a, stack_b, PB);
-			swap(stack_b, SB);
 			rotate(stack_b, RB);
 			rotate(stack_b, RB);
 			rotate(stack_b, RB);
