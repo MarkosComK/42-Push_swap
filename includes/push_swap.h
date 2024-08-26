@@ -49,6 +49,7 @@ void	push(t_stack **stack_1, t_stack **stack_2, int move);
 void	rotate(t_stack **stack, int move);
 void	reverse_rotate(t_stack **stack, int move);
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 //srcs/sort
 //stack_sort.c
