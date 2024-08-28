@@ -57,6 +57,12 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 			push(stack_a, stack_b, PB);
 			swap(stack_b, SB);
 		}
+		else if (cost_index->cost == 2 && cost_index->index == 1)
+		{
+			ft_printf("this is the case\n");
+			swap(stack_a, SA);
+			push(stack_a, stack_b, PB);
+		}
 		print_stacks(*stack_a, *stack_b);
 		cost_index->cost = -1;
 		i++;
