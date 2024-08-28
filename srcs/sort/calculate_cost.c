@@ -6,12 +6,39 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:14:06 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/26 13:52:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:18:25 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	min_max_pos(t_stack *stack, bool max, bool pos)
+{
+	int	target;
+	int	attr[2];
+	t_stack	*tmp;
+
+	tmp = stack_first(stack);
+	attr[0] = -1;
+	attr[1] = 0;
+	target = tmp->nbr;
+	while (++attr[0] < stack_size(stack))
+	{
+		if ((tmp->nbr > target && max == true) || (tmp->nbr < target
+				&& max == false))
+		{
+			target = tmp->content;
+			attr[1] = attr[0];
+		}
+		tmp = tmp->next;
+	}
+	if (pos == true)
+		return (attr[1]);
+	else
+		return (target);
+}
+
+/*
 int	calculate_cost(t_stack *stack_a, t_stack **stack_b)
 {
 	int	cost;
@@ -87,5 +114,19 @@ t_cost_index	*find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b)
         }
         tmp = tmp->next;
     }
+
+    tmp = *stack_a;
+    int stack_s = stack_size(*stack_a);
+    if (stack_s >= 3) {
+        for (int i = stack_s- 3; i < stack_s; i++) {
+            int current_cost = calculate_cost(tmp, stack_b) + i;
+            if (current_cost != -1 && current_cost < cost_index->cost) {
+                cost_index->cost = current_cost;
+                cost_index->index = i;
+            }
+            tmp = tmp->next;
+        }
+    }
     return cost_index;
 }
+*/

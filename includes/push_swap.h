@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/26 14:33:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/28 18:31:06 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@
 
 typedef struct s_stack
 {
-	long			nbr;
-	long			index;
-	long			biggest;
+	long				nbr;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }			t_stack;
@@ -44,8 +42,13 @@ typedef struct s_cost_index
 	int	index;
 }			t_cost_index;
 
-void	ft_error(void);
 
+//srcs/check
+//check_args.c
+bool	is_valid(t_stack *stack_a, char *str);
+t_stack	*first_node(t_stack *stack);
+bool	is_space(char c);
+int		ft_atoi_ps(char *str, t_stack *stack_a);
 //srcs/operations/
 //swap.c
 void	swap(t_stack **stack, int move);
@@ -57,7 +60,9 @@ void	rotate(t_stack **stack, int move);
 void	reverse_rotate(t_stack **stack, int move);
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
-
+//execution.c
+void	execute(t_stack **stack_a, t_stack **stack_b, char *line);
+void	multi_execute(t_stack **stack_a, t_stack **stack_b, char *line, int n);
 //srcs/sort
 //calculate_cost.c
 int		calculate_cost(t_stack *stack_a, t_stack **stack_b);
@@ -65,17 +70,17 @@ int		get_number_below(int number, t_stack *stack);
 int		index_of(int number, t_stack *stack);
 t_cost_index	*find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b);
 //stack_sort.c
-void	stack_sort(t_stack **stack);
+void	stack_sort(t_stack *stack_a, t_stack *stack_b);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
-void	stack_sort_tree(t_stack **stack_a);
+void	stack_sort_three(t_stack **stack_a);
 
 //srcs/stack
 //stack_create.c
 t_stack	*stack_exception(int size, char **content);
 t_stack	*stack_new(int ac, char **content);
 t_stack	*stack_add_head(t_stack **stack, int content);
-t_stack	*stack_add_tail(t_stack **stack, int content);
+t_stack	*stack_add_tail(t_stack *stack, int content);
 t_stack	*stack_new_node(int content);
 //stack_free.c
 void	stack_free(t_stack *stack);
@@ -84,6 +89,7 @@ int		stack_check_dup(t_stack *stack);
 int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
+t_stack	*stack_first(t_stack *stack);
 //stack_utils_values.c
 int		stack_min(t_stack *stack);
 int		stack_max(t_stack *stack);
@@ -94,5 +100,6 @@ int		stack_n_is_max(t_stack *stack);
 void	print_stack(t_stack *stack);
 void print_stacks(t_stack *stack1, t_stack *stack2);
 int		split_len(char	**tmp);
+void	ft_error(t_stack *stack);
 
 #endif

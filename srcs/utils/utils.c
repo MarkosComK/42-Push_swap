@@ -50,8 +50,9 @@ void print_stacks(t_stack *stack1, t_stack *stack2)
 		}
 }
 
-void	ft_error(void)
+void	ft_error(t_stack *stack)
 {
+	stack_free(stack);
 	write(2, "Error\n", 6);
 	exit (1);
 }

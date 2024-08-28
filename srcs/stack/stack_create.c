@@ -23,7 +23,7 @@ t_stack	*stack_exception(int size, char **content)
 	while (i < size)
 	{
 		j = ft_atoi(content[i]);
-		stack_add_tail(&stack, j);
+		stack_add_tail(stack, j);
 		i++;
 	}
 	while (*content)
@@ -43,7 +43,7 @@ t_stack	*stack_new(int ac, char **content)
 	while (i < ac)
 	{
 		j = ft_atoi(content[i]);
-		stack_add_tail(&stack, j);
+		stack_add_tail(stack, j);
 		i++;
 	}
 	return (stack);
@@ -61,7 +61,7 @@ t_stack	*stack_add_head(t_stack **stack, int content)
 	return (new_node);
 }
 
-t_stack	*stack_add_tail(t_stack **stack, int content)
+t_stack	*stack_add_tail(t_stack *stack, int content)
 {
 	t_stack	*new_node;
 	t_stack	*last;
@@ -69,9 +69,9 @@ t_stack	*stack_add_tail(t_stack **stack, int content)
 	new_node = stack_new_node(content);
 	if (!new_node)
 		return (NULL);
-	last = stack_last(*stack);
+	last = stack_last(stack);
 	last->next = new_node;
-	new_node->prev = (*stack);
+	new_node->prev = (stack);
 	return (new_node);
 }
 
