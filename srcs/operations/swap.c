@@ -16,12 +16,17 @@ void	swap(t_stack **stack, int move)
 {
 	t_stack	*tmp;
 
-	if (!*stack || !((*stack)->next))
+	if (!stack || !*stack || !((*stack)->next))
 		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = (*stack)->next;
-	(*stack)->next = tmp;
+	*stack = stack_first(*stack);
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
+	if (tmp->next != NULL)
+		tmp->next->prev = *stack;
+	tmp->next = *stack;
+	tmp->prev = NULL;
+	(*stack)->prev = tmp;
+	*stack = tmp;
 	if (move == SA)
 		write(1, "sa\n", 3);
 	if (move == SB)

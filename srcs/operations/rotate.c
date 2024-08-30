@@ -14,19 +14,16 @@
 
 void	rotate(t_stack **stack, int move)
 {	t_stack	*first;
-	t_stack	*last;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
+	*stack = stack_first(*stack);
 	first = *stack;
-	last = *stack;
-	while (last->next)
-		last = last->next;
-	*stack = first->next;
+	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	first->next = NULL;
-	last->next = first;
-	first->prev = last;
+	first->prev = stack_last(*stack);
+	stack_last(*stack)->next = first;
 	if (move == RA)
 		write(1, "ra\n", 3);
 	if (move == RB)
@@ -36,24 +33,16 @@ void	rotate(t_stack **stack, int move)
 void	reverse_rotate(t_stack **stack, int move)
 {
 	t_stack	*tmp;
-	int		i;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	i = 0;
-	tmp = *stack;
-	while ((*stack)->next)
-	{
-		*stack = (*stack)->next;
-		i++;
-	}
+	*stack = stack_last(*stack);
+	tmp = stack_first(*stack);
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
+	(*stack)->prev = NULL;
 	(*stack)->next = tmp;
-	while (i > 1)
-	{
-		tmp = tmp->next;
-		i--;
-	}
-	tmp->next = NULL;
+	tmp->prev = *stack;
 	if (move == RRA)
 		write(1, "rra\n", 4);
 	if (move == RRB)

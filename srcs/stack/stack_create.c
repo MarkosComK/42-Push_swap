@@ -75,6 +75,20 @@ t_stack	*stack_add_tail(t_stack *stack, int content)
 	return (new_node);
 }
 
+t_stack	*stack_add_node(t_stack *node, int content)
+{
+	t_stack	*new;
+
+	new = stack_new_node(content);
+	if (!new)
+		return (NULL);
+	if (!node)
+		return (new);
+	node->next = new;
+	new->prev = node;
+	return (new);
+}
+
 t_stack	*stack_new_node(int content)
 {
 	t_stack	*stack_new;

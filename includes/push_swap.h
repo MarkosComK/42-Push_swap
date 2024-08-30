@@ -65,15 +65,15 @@ void	execute(t_stack **stack_a, t_stack **stack_b, char *line);
 void	multi_execute(t_stack **stack_a, t_stack **stack_b, char *line, int n);
 //srcs/sort
 //calculate_cost.c
-int		calculate_cost(t_stack *stack_a, t_stack **stack_b);
-int		get_number_below(int number, t_stack *stack);
-int		index_of(int number, t_stack *stack);
-t_cost_index	*find_lowest_cost_move(t_stack **stack_a, t_stack **stack_b);
+int	min_pos(t_stack *stack);
+void	min_push(t_stack *stack);
+void	target_push(t_stack *stack, int pos);
 //stack_sort.c
 void	stack_sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_tri_adv(t_stack *stack_a, t_stack *stack_b, int len);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
-void	stack_sort_three(t_stack **stack_a);
+void	stack_sort_three(t_stack *stack_a);
 
 //srcs/stack
 //stack_create.c
@@ -81,6 +81,7 @@ t_stack	*stack_exception(int size, char **content);
 t_stack	*stack_new(int ac, char **content);
 t_stack	*stack_add_head(t_stack **stack, int content);
 t_stack	*stack_add_tail(t_stack *stack, int content);
+t_stack	*stack_add_node(t_stack *node, int content);
 t_stack	*stack_new_node(int content);
 //stack_free.c
 void	stack_free(t_stack *stack);

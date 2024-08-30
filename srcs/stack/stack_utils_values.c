@@ -18,6 +18,7 @@ int	stack_min(t_stack *stack)
 
 	if (!stack)
 		return (-1);
+	stack = stack_first(stack);
 	value = stack->nbr;
 	while (stack)
 	{
@@ -34,6 +35,7 @@ int	stack_max(t_stack *stack)
 
 	if (!stack)
 		return (-1);
+	stack = stack_first(stack);
 	value = stack->nbr;
 	while (stack)
 	{
@@ -49,6 +51,7 @@ int	stack_n_is_min(t_stack *stack)
 	int		size;
 	t_stack	*tmp;
 
+	stack = stack_first(stack);
 	size = stack_size(stack);
 	tmp = stack;
 	while (size > 1)
@@ -66,6 +69,7 @@ int	stack_n_is_max(t_stack *stack)
 	int		size;
 	t_stack	*tmp;
 
+	stack = stack_first(stack);
 	size = stack_size(stack);
 	tmp = stack;
 	while (size > 1)

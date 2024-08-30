@@ -16,7 +16,8 @@ void	print_stack(t_stack *stack)
 {
 	t_stack	*current;
 
-	current = stack;
+	current = stack_first(stack);
+	ft_printf("STACK: \n");
 	while (current)
 	{
 		ft_printf("%d\n", current->nbr);
@@ -29,8 +30,8 @@ void print_stacks(t_stack *stack1, t_stack *stack2)
 	t_stack	   *current1;
 	t_stack	   *current2;
 
-	current1 = stack1;
-	current2 = stack2;
+	current1 = stack_first(stack1);
+	current2 = stack_first(stack2);
 	ft_printf("A ----- B\n");
 	while (current1 || current2) {
 		if (current1)

@@ -20,15 +20,15 @@ void	stack_sort(t_stack *stack_a, t_stack *stack_b)
 	if (stack_size(stack_a) == 2)
 		execute(&stack_a, &stack_b, "sa");
 	else if (stack_size(stack_a) == 3)
-		stack_sort_three(&stack_a);
+		stack_sort_three(stack_a);
 	else if (stack_size(stack_a) > 3 && stack_size(stack_a) < 6)
-		sort_tri_adv(stack_a, stack_b, len);
-	else
-		sort(stack_a, stack_b);
+		sort_tri_adv(stack_a, stack_b, stack_size(stack_a));
+	//else
+		//sort(stack_a, stack_b);
 }
 
 // push 2 smallest number to stack b, sort 3 stack a, push back to stack a
-void	sort_tri_adv(t_node *stack_a, t_node *stack_b, int len)
+void	sort_tri_adv(t_stack *stack_a, t_stack *stack_b, int len)
 {
 	int	tmp;
 
@@ -36,14 +36,15 @@ void	sort_tri_adv(t_node *stack_a, t_node *stack_b, int len)
 	while (tmp-- > 3)
 	{
 		min_push(stack_a);
-		execute(&stack_a, &stack_b, "pb", false);
+		execute(&stack_a, &stack_b, "pb");
+		print_stacks(stack_a, stack_b);
 	}
-	sort_three(stack_a);
+	stack_sort_three(stack_a);
 	multi_execute(&stack_a, &stack_b, "pa", len - 3);
 }
-
+/*
 // attr[3]: attr[0] = min, attr[1] = index, attr[2] = len
-void	sort(t_node *stack_a, t_node *stack_b)
+void	sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	i;
 	int	pos[2];
@@ -71,7 +72,8 @@ void	sort(t_node *stack_a, t_node *stack_b)
 	}
 	min_max_push(stack_a, false);
 }
-
+*/
+/*
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	while (stack_size(*stack_a) > 3 && stack_size(*stack_b) < 2)
@@ -91,7 +93,8 @@ void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
 	}
 	print_stacks(*stack_a, *stack_b);
 }
-
+*/
+/*
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b)
 {
 	t_cost_index	*cost_index = NULL;
@@ -131,25 +134,54 @@ void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b)
 		i++;
 	}
 }
-
-void	stack_sort_three(t_stack **stack_a)
+*/
+/*
+void	sort_three(t_stack *stack_a)
 {
-	while (!stack_sorted(*stack_a))
+	if (stack_a->nbr > stack_a->next->content)
 	{
-		if (stack_n_is_min(*stack_a))
+		if (stack_a->content < stack_a->next->next->content)
+			execute(&stack_a, NULL, "sa", false);
+		else if (stack_a->next->content > stack_a->next->next->content)
 		{
-			swap(stack_a, SA);
-			rotate(stack_a, RA);
+			execute(&stack_a, NULL, "sa", false);
+			execute(&stack_a, NULL, "rra", false);
 		}
-		else if (stack_n_is_max(*stack_a))
-		{
-			rotate(stack_a, RA);
-			if (!stack_sorted(*stack_a))
-				swap(stack_a, SA);
-		}
-		else if ((*stack_a)->nbr > (*stack_a)->next->nbr)
-			swap(stack_a, SA);
-		else if ((*stack_a)->nbr < (*stack_a)->next->nbr)
-			reverse_rotate(stack_a, RRA);
+		else
+			execute(&stack_a, NULL, "ra", false);
 	}
+	else if (stack_a->content < stack_a->next->content)
+	{
+		if (stack_a->content > stack_a->next->next->content)
+			execute(&stack_a, NULL, "rra", false);
+		else if (stack_a->next->content > stack_a->next->next->content)
+		{
+			execute(&stack_a, NULL, "sa", false);
+			execute(&stack_a, NULL, "ra", false);
+		}
+	}
+}
+*/
+
+void	stack_sort_three(t_stack *stack_a)
+{
+	while (!stack_sorted(stack_a))
+	{
+		if (stack_n_is_min(stack_a))
+		{
+			execute(&stack_a, NULL, "sa");
+			execute(&stack_a, NULL, "ra");
+		}
+		else if (stack_n_is_max(stack_a))
+		{
+			execute(&stack_a, NULL, "ra");
+			if (!stack_sorted(stack_a))
+				execute(&stack_a, NULL, "sa");
+		}
+		else if (stack_a->nbr > stack_a->next->nbr)
+			execute(&stack_a, NULL, "sa");
+		else if (stack_a->nbr < stack_a->next->nbr)
+			execute(&stack_a, NULL, "rra");
+	}
+	print_stack(stack_a);
 }

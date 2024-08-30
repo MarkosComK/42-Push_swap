@@ -18,6 +18,8 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		i;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac < 2)
 		ft_error(stack_a);
 	if (ac == 2)
@@ -30,11 +32,11 @@ int	main(int ac, char **av)
 		{
 			if (is_valid(stack_a, av[i]) == false)
 				ft_error(stack_a);
-			stack_a = stack_add_tail(stack_a, ft_atoi(av[i]));
+			stack_a = stack_add_node(stack_a, ft_atoi(av[i]));
 		}
-		stack_sort(stack_a, stack_b, stack_len(stack_a));
-		clear_lst_node(stack_a);
-		clear_lst_node(stack_b);
+		stack_sort(stack_a, stack_b);
+		stack_free(stack_a);
+		stack_free(stack_b);
 	}
 	return (0);
 }

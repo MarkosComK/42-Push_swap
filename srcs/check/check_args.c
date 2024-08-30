@@ -17,7 +17,7 @@ bool	is_valid(t_stack *stack_a, char *str)
 	t_stack	*tmp;
 	int		nbr;
 
-	tmp = first_node(stack_a);
+	tmp = stack_first(stack_a);
 	nbr = ft_atoi_ps(str, stack_a);
 	while (tmp)
 	{
