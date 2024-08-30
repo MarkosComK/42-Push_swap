@@ -66,14 +66,25 @@ void	multi_execute(t_stack **stack_a, t_stack **stack_b, char *line, int n);
 //srcs/sort
 //calculate_cost.c
 int	min_pos(t_stack *stack);
+int	max_pos(t_stack *stack);
 void	min_push(t_stack *stack);
 void	target_push(t_stack *stack, int pos);
+int	lcm(int pos[2], int len_a, int len_b, bool return_move);
+int	execute_calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b);
+int	min_lcm(int *arr, int len, bool return_index);
+int	find_min_index(t_stack *stack_a, t_stack *stack_b, int len);
+int	node_index(t_stack *stack, int target);
 //stack_sort.c
 void	stack_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b, int len);
+void	sort_all(t_stack *stack_a, t_stack *stack_b);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_three(t_stack *stack_a);
+void	reverse_pos(t_stack **stack_a, t_stack **stack_b, int pos[2]);
+void	execute_ps(t_stack **stack_a, t_stack **stack_b, int pos[2], int mode);
+void	exec_smt(t_stack **stack_a, t_stack **stack_b, int pos[2], int mode);
+int	find_target(t_stack *stack_from, t_stack *stack_to);
 
 //srcs/stack
 //stack_create.c
@@ -91,6 +102,8 @@ int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
 t_stack	*stack_first(t_stack *stack);
+int	max(int a, int b);
+int	min(int a, int b);
 //stack_utils_values.c
 int		stack_min(t_stack *stack);
 int		stack_max(t_stack *stack);
