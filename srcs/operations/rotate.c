@@ -34,7 +34,7 @@ void	reverse_rotate(t_stack **stack, int move)
 {
 	t_stack	*tmp;
 
-	if (!stack || !*stack || !(*stack)->next)
+	if (!stack || !*stack)
 		return ;
 	*stack = stack_last(*stack);
 	tmp = stack_first(*stack);

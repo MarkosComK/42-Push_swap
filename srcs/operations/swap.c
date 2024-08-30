@@ -35,8 +35,6 @@ void	swap(t_stack **stack, int move)
 
 void	swap_swap(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
-		return ;
 	swap(stack_a, 0);
 	swap(stack_b, 0);
 	write(1, "ss\n", 3);

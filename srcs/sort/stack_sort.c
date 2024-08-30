@@ -51,6 +51,7 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 	int	mode;
 
 	multi_execute(&stack_a, &stack_b, "pb", 2);
+	print_stacks(stack_a, stack_b);
 	while (stack_size(stack_a) > 3)
 	{
 		pos[0] = find_min_index(stack_a, stack_b, stack_size(stack_a));
@@ -63,7 +64,9 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 		{
 			reverse_pos(&stack_a, &stack_b, pos);
 		}
+		printf("mod: %i\n", mode);
 		execute_ps(&stack_a, &stack_b, pos, mode);
+	print_stacks(stack_a, stack_b);
 		execute(&stack_a, &stack_b, "pb");
 	}
 	stack_sort_three(stack_a);
