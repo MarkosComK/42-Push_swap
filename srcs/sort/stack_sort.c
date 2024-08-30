@@ -66,8 +66,8 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 		}
 		printf("mod: %i\n", mode);
 		execute_ps(&stack_a, &stack_b, pos, mode);
-	print_stacks(stack_a, stack_b);
 		execute(&stack_a, &stack_b, "pb");
+	print_stacks(stack_a, stack_b);
 	}
 	stack_sort_three(stack_a);
 	while (stack_size(stack_b) > 0)
