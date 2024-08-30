@@ -79,7 +79,7 @@ void	min_push(t_stack *stack)
 {
 	int	pos;
 
-	pos = stack_min(stack);
+	pos = min_pos(stack);
 	target_push(stack, pos);
 }
 

@@ -74,6 +74,7 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 		target_push(stack_a, find_target(stack_b, stack_a));
 		execute(&stack_a, &stack_b, "pa");
 	}
+	min_push(stack_a);
 }
 
 int	find_target(t_stack *stack_from, t_stack *stack_to)
