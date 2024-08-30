@@ -71,6 +71,7 @@ void	min_push(t_stack *stack);
 void	target_push(t_stack *stack, int pos);
 int	lcm(int pos[2], int len_a, int len_b, bool return_move);
 int	execute_calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b);
+int	calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b);
 int	min_lcm(int *arr, int len, bool return_index);
 int	find_min_index(t_stack *stack_a, t_stack *stack_b, int len);
 int	node_index(t_stack *stack, int target);

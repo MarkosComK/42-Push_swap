@@ -128,7 +128,6 @@ int	find_min_index(t_stack *stack_a, t_stack *stack_b, int len)
 int	execute_calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b)
 {
 	int	nmoves = 0;
-	(void) len;
 	int	pos[2];
 
 	if ((stack_a->nbr < stack_min(stack_b))
@@ -142,7 +141,37 @@ int	execute_calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b)
 			nmoves = (lcm(pos, stack_size(stack_a), stack_size(stack_b), false)
 					+ 1);
 	}
+	else
+		nmoves = calc(stack_a, stack_b, len, return_pos_b);
 	return (nmoves);
+}
+
+int	calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b)
+{
+	t_stack	*tmp;
+	int		nmoves_to_top[2];
+	int		target;
+
+	nmoves_to_top[0] = node_index(stack_a, stack_a->nbr);
+	tmp = stack_first(stack_b);
+	if (stack_b)
+	{
+		target = tmp->nbr;
+		while (tmp)
+		{
+			if ((tmp->nbr > target && tmp->nbr < stack_a->nbr)
+				|| (tmp->nbr < stack_a->nbr
+					&& target > stack_a->nbr))
+				target = tmp->nbr;
+			tmp = tmp->next;
+		}
+		nmoves_to_top[1] = node_index(stack_b, target);
+		if (return_pos_b == true)
+			return (nmoves_to_top[1]);
+		else
+			return (lcm(nmoves_to_top, len, stack_size(stack_b), false) + 1);
+	}
+	return (nmoves_to_top[0] + 1);
 }
 
 int	lcm(int pos[2], int len_a, int len_b, bool return_move)
