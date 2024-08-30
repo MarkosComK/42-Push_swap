@@ -61,8 +61,6 @@ void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 
 void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
-		return ;
 	reverse_rotate(stack_a, 0);
 	reverse_rotate(stack_b, 0);
 	write(1, "rrr\n", 4);

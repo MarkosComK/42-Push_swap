@@ -60,8 +60,9 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 		pos[1] = execute_calc(stack_a, stack_b, stack_size(stack_a), true);
 		mode = lcm(pos, stack_size(stack_a), stack_size(stack_b), true);
 		if (mode == 1)
+		{
 			reverse_pos(&stack_a, &stack_b, pos);
-		print_stacks(stack_a, stack_b);
+		}
 		execute_ps(&stack_a, &stack_b, pos, mode);
 		execute(&stack_a, &stack_b, "pb");
 	}
