@@ -70,7 +70,7 @@ void	min_push(t_stack *stack);
 void	target_push(t_stack *stack, int pos);
 //stack_sort.c
 void	stack_sort(t_stack *stack_a, t_stack *stack_b);
-void	sort_tri_adv(t_stack *stack_a, t_stack *stack_b, int len);
+void	sort_five(t_stack *stack_a, t_stack *stack_b, int len);
 void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_three(t_stack *stack_a);

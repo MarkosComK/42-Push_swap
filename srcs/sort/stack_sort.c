@@ -22,13 +22,13 @@ void	stack_sort(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_size(stack_a) == 3)
 		stack_sort_three(stack_a);
 	else if (stack_size(stack_a) > 3 && stack_size(stack_a) < 6)
-		sort_tri_adv(stack_a, stack_b, stack_size(stack_a));
+		sort_five(stack_a, stack_b, stack_size(stack_a));
 	//else
 		//sort(stack_a, stack_b);
 }
 
 // push 2 smallest number to stack b, sort 3 stack a, push back to stack a
-void	sort_tri_adv(t_stack *stack_a, t_stack *stack_b, int len)
+void	sort_five(t_stack *stack_a, t_stack *stack_b, int len)
 {
 	int	tmp;
 
@@ -71,95 +71,6 @@ void	sort(t_stack *stack_a, t_stack *stack_b)
 		execute(&stack_a, &stack_b, "pa", false);
 	}
 	min_max_push(stack_a, false);
-}
-*/
-/*
-void	stack_sort_b(t_stack **stack_a, t_stack **stack_b)
-{
-	while (stack_size(*stack_a) > 3 && stack_size(*stack_b) < 2)
-	{
-		push(stack_a, stack_b, PB);
-		print_stacks(*stack_a, *stack_b);
-	}
-	while (stack_size(*stack_a) > 3)
-		stack_sort_ten(stack_a, stack_b);
-	if (!stack_sorted(*stack_a))
-		stack_sort_tree(stack_a);
-	int j = 0;
-	while (stack_size(*stack_b) > 3 && j < 0)
-	{
-		stack_sort_ten(stack_b, stack_a);
-		j++;
-	}
-	print_stacks(*stack_a, *stack_b);
-}
-*/
-/*
-void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b)
-{
-	t_cost_index	*cost_index = NULL;
-	int	i = 0;
-	while (stack_size(*stack_a) > 3 && i < 5)
-	{
-		cost_index = find_lowest_cost_move(stack_a, stack_b);
-		ft_printf("cost: %i index: %i\n", cost_index->cost, cost_index->index);
-		if (cost_index->cost == 1 && index_of((*stack_a)->nbr, *stack_a) == 0)
-			push(stack_a, stack_b, PB);
-		else if (cost_index->cost == 2 && (*stack_a)->nbr < stack_min(*stack_b) &&
-			stack_min(*stack_b) == stack_last(*stack_b)->nbr)
-		{
-			push(stack_a, stack_b, PB);
-			rotate(stack_b, RB);
-		}
-		else if (cost_index->cost == 2 && index_of(get_number_below(
-			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) < 3)
-		{
-			rotate(stack_b, RB);
-			push(stack_a, stack_b, PB);
-		}
-		else if (cost_index->cost == 2 && index_of(get_number_below(
-			(*stack_a)->nbr, *stack_b), *stack_b) == 1 && stack_size(*stack_b) >= 3)
-		{
-			push(stack_a, stack_b, PB);
-			swap(stack_b, SB);
-		}
-		else if (cost_index->cost == 2 && cost_index->index == 1)
-		{
-			ft_printf("this is the case\n");
-			swap(stack_a, SA);
-			push(stack_a, stack_b, PB);
-		}
-		print_stacks(*stack_a, *stack_b);
-		cost_index->cost = -1;
-		i++;
-	}
-}
-*/
-/*
-void	sort_three(t_stack *stack_a)
-{
-	if (stack_a->nbr > stack_a->next->content)
-	{
-		if (stack_a->content < stack_a->next->next->content)
-			execute(&stack_a, NULL, "sa", false);
-		else if (stack_a->next->content > stack_a->next->next->content)
-		{
-			execute(&stack_a, NULL, "sa", false);
-			execute(&stack_a, NULL, "rra", false);
-		}
-		else
-			execute(&stack_a, NULL, "ra", false);
-	}
-	else if (stack_a->content < stack_a->next->content)
-	{
-		if (stack_a->content > stack_a->next->next->content)
-			execute(&stack_a, NULL, "rra", false);
-		else if (stack_a->next->content > stack_a->next->next->content)
-		{
-			execute(&stack_a, NULL, "sa", false);
-			execute(&stack_a, NULL, "ra", false);
-		}
-	}
 }
 */
 
