@@ -48,12 +48,14 @@ int	stack_sorted(t_stack *stack)
 int	stack_size(t_stack *stack)
 {
 	int	size;
+	t_stack	*tmp;
 
 	size = 0;
-	while (stack)
+	tmp = stack_first(stack);
+	while (tmp)
 	{
 		size++;
-		stack = stack->next;
+		tmp = tmp->next;
 	}
 	return (size);
 }
