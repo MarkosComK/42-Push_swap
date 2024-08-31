@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:14:06 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:15:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:16:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	min_pos(t_stack *stack)
 {
-	int	target;
-	int	attr[2];
+	int		target;
+	int		attr[2];
 	t_stack	*tmp;
 
 	tmp = stack_first(stack);
@@ -36,8 +36,8 @@ int	min_pos(t_stack *stack)
 
 int	max_pos(t_stack *stack)
 {
-	int	target;
-	int	attr[2];
+	int		target;
+	int		attr[2];
 	t_stack	*tmp;
 
 	tmp = stack_first(stack);
