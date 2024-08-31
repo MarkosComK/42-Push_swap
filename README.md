@@ -190,6 +190,17 @@ It is in ascending order! that`s what we wanted to have.
 <br>
 Now go back to the beginning of our program running to wach again each step.
 
+## Ok, what now?
+
+Well, now you need to start code. What i recommend:
+Start with the stack_a creation, receive the args, transform them into values and place into the stack - I did this using linked list (to be honest i don`t know yet if there is another solution than linked lists).
+
+Its everything working properly? 
+
+- Yes
+
+So start building te functions in the subject (push, swap, rotate [...]) and don`t forget to test them a lot with your stack_a. That`s a good starting point and it will take a lot of time to do all of that, but you`ll understand the main concept of Push_swap after that.
+
 ## recapitulating ✍️
 
 - Our program will receive intengers.
