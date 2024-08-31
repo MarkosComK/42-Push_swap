@@ -34,9 +34,7 @@
 
 <br>
 
-<p align="center">
-![push_swap](https://github.com/user-attachments/assets/884ae181-eb62-407a-af90-b0aa4e6645a5)
-</p>
+![push_swap_gift](https://github.com/user-attachments/assets/884ae181-eb62-407a-af90-b0aa4e6645a5)
 
 <br>
 <p>
