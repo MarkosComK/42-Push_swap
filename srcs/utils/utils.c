@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:01:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 18:28:32 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:22:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ void	print_stack(t_stack *stack)
 	}
 }
 
-void print_stacks(t_stack *stack1, t_stack *stack2)
+void	print_stacks(t_stack *stack1, t_stack *stack2)
 {
-	t_stack	   *current1;
-	t_stack	   *current2;
+	t_stack	*current1;
+	t_stack	*current2;
 
 	current1 = stack_first(stack1);
 	current2 = stack_first(stack2);
 	ft_printf("A ----- B\n");
-	while (current1 || current2) {
+	while (current1 || current2)
+	{
 		if (current1)
 		{
 			ft_printf("%i\t", current1->nbr);
@@ -48,7 +49,7 @@ void print_stacks(t_stack *stack1, t_stack *stack2)
 		}
 		else
 			ft_printf("\n");
-		}
+	}
 }
 
 void	ft_error(t_stack *stack)
