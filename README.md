@@ -202,5 +202,6 @@ This sould give you a god starting point to create your own push_swap. Remember,
 
 * [Algorithm - With index](https://github.com/VBrazhnik/Push_swap/wiki/Algorithm)
 * [Algorithm - Turk](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
+* [Slution - @SopadeGalinha](https://github.com/SopadeGalinha/42-Push_Swap)
 * [Article - The least amount of moves with 2 stacks](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 * [Push_swap visualizer](https://github.com/o-reo/push_swap_visualizer)
