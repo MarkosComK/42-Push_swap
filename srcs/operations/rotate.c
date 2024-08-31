@@ -13,7 +13,8 @@
 #include "push_swap.h"
 
 void	rotate(t_stack **stack, int move)
-{	t_stack	*first;
+{
+	t_stack	*first;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
@@ -51,7 +52,6 @@ void	reverse_rotate(t_stack **stack, int move)
 
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
-
 	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
 	rotate(stack_a, 0);
