@@ -33,6 +33,12 @@
 > Push_swap is a sorting algorithm implemented in C. It efficiently sorts a stack of intengers using a series of predefined operations.
 
 <br>
+
+<p align="center">
+![push_swap](https://github.com/user-attachments/assets/884ae181-eb62-407a-af90-b0aa4e6645a5)
+</p>
+
+<br>
 <p>
 Before reviewing my code, I strongly advise against analyzing it in its current state. It's quite disorganized, reflecting my early attempts at tackling the Pushswap project. While it may not be a masterpiece of code, it serves as a starting point for my learning journey.
 </p>
