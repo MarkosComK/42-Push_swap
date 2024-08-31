@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/26 14:10:58 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:38:13 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push(t_stack **stack_1, t_stack **stack_2, int move)
 	if (tmp != NULL)
 		tmp->prev = NULL;
 	(*stack_1)->next = *stack_2;
-	if (!*stack_2)
+	if (*stack_2)
 		(*stack_2)->prev = *stack_1;
 	*stack_2 = *stack_1;
 	*stack_1 = tmp;
