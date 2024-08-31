@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:25:01 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:26:10 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void	min_push(t_stack *stack);
 void	target_push(t_stack *stack, int pos);
 int		node_index(t_stack *stack, int target);
 //calculate_cost_move.c
-int		execute_calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b);
+int		execute_calc(t_stack *stack_a, t_stack *stack_b, int len,
+			bool return_pos_b);
 int		lcm(int pos[2], int len_a, int len_b, bool return_move);
 int		calc(t_stack *stack_a, t_stack *stack_b, int len, bool return_pos_b);
 int		min_lcm(int *arr, int len, bool return_index);
