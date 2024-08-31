@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:24:20 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:25:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 typedef struct s_stack
 {
 	long				nbr;
-	struct s_stack	*next;
-	struct s_stack	*prev;
+	struct s_stack		*next;
+	struct s_stack		*prev;
 }			t_stack;
 
 typedef struct s_cost_index
@@ -41,7 +41,6 @@ typedef struct s_cost_index
 	int	cost;
 	int	index;
 }			t_cost_index;
-
 
 //srcs/check
 //check_args.c
