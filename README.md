@@ -11,6 +11,7 @@
 <p align="center">
 	Don`t forget to give it a ⭐<strong>Star</strong>.
 </p>
+
 <!---
 <h3 align="center">
 	<a href="#%EF%B8%8F-about">About</a>
@@ -30,6 +31,14 @@
 ## 🗣️ About
 
 > Push_swap is a sorting algorithm implemented in C. It efficiently sorts a stack of intengers using a series of predefined operations.
+
+<br>
+<p>
+Before reviewing my code, I strongly advise against analyzing it in its current state. It's quite disorganized, reflecting my early attempts at tackling the Pushswap project. While it may not be a masterpiece of code, it serves as a starting point for my learning journey.
+</p>
+<p>
+<strong>Don't worry, though</strong>. At the end of this file, I'll share some solutions that helped me successfully complete the project. Additionally, I've included detailed documentation that I found to be very helpful in understanding and improving my code.
+</p>
 
 <br>
 
@@ -177,6 +186,7 @@ Now is
 ```
 
 It is in ascending order! that`s what we wanted to have.
+
 <br>
 Now go back to the beginning of our program running to wach again each step.
 
