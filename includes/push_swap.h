@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:15:11 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:19:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,12 @@ int	find_min_index(t_stack *stack_a, t_stack *stack_b, int len);
 void	stack_sort(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b, int len);
 void	sort_all(t_stack *stack_a, t_stack *stack_b);
-void	stack_sort_b(t_stack **stack_a, t_stack **stack_b);
-void	stack_sort_ten(t_stack **stack_a, t_stack **stack_b);
 void	stack_sort_three(t_stack *stack_a);
-void	reverse_pos(t_stack **stack_a, t_stack **stack_b, int pos[2]);
+int	find_target(t_stack *stack_from, t_stack *stack_to);
+//stack_sort_utils.c
 void	execute_ps(t_stack **stack_a, t_stack **stack_b, int pos[2], int mode);
 void	exec_smt(t_stack **stack_a, t_stack **stack_b, int pos[2], int mode);
-int	find_target(t_stack *stack_from, t_stack *stack_to);
+void	reverse_pos(t_stack **stack_a, t_stack **stack_b, int pos[2]);
 
 //srcs/stack
 //stack_create.c
