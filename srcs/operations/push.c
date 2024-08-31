@@ -24,7 +24,7 @@ void	push(t_stack **stack_1, t_stack **stack_2, int move)
 	if (tmp != NULL)
 		tmp->prev = NULL;
 	(*stack_1)->next = *stack_2;
-	if (*stack_2!= NULL)
+	if (!*stack_2)
 		(*stack_2)->prev = *stack_1;
 	*stack_2 = *stack_1;
 	*stack_1 = tmp;
