@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:37:33 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/28 15:18:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:10:38 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	stack_sorted(t_stack *stack)
 
 int	stack_size(t_stack *stack)
 {
-	int	size;
+	int		size;
 	t_stack	*tmp;
 
 	size = 0;
@@ -76,18 +76,4 @@ t_stack	*stack_first(t_stack *stack)
 	while (stack->prev)
 		stack = stack->prev;
 	return (stack);
-}
-
-int	max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-int	min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
 }
