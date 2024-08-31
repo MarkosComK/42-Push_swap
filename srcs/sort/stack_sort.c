@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 19:00:56 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:18:15 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:20:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,7 @@ void	sort_all(t_stack *stack_a, t_stack *stack_b)
 		pos[1] = execute_calc(stack_a, stack_b, stack_size(stack_a), true);
 		mode = lcm(pos, stack_size(stack_a), stack_size(stack_b), true);
 		if (mode == 1)
-		{
 			reverse_pos(&stack_a, &stack_b, pos);
-		}
 		execute_ps(&stack_a, &stack_b, pos, mode);
 		execute(&stack_a, &stack_b, "pb");
 	}
