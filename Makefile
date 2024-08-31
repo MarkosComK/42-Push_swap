@@ -8,6 +8,7 @@ PURPLE = $(shell printf "\33[35m")
 TITLE = $(shell printf "\33[32;40m")
 
 NAME = push_swap
+CHECKER = checker
 CC = cc
 RM = rm -f
 FLAGS = -Wall -Wextra -Werror -g -Iincludes
@@ -19,8 +20,11 @@ SRC_1 = $(wildcard srcs/*.c)
 
 SRC_2 = $(wildcard srcs/*/*.c) \
 
+SRC_CHECKER = $(wildcard bonus/*.c)
+
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}
+OBJ_CHECKER = ${SRC_CHECKER:.c=.o}
 
 INCLUDE = -L ./libft -lft
 
@@ -41,7 +45,16 @@ ${NAME}: ${OBJ_1} ${OBJ_2}
 	@echo
 	@echo
 
-all: ${NAME} ${BONUS}
+all: ${NAME}
+
+${CHECKER}: ${OBJ_CHECKER}
+	@${CC} ${FLAGS} ${OBJ_CHECKER} -o ${CHECKER} ${INCLUDE}
+
+bonus: ${CHECKER}
+
+${OBJ_CHECKER}: ${SRC_CHECKER}
+	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+
 
 clean:
 	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
