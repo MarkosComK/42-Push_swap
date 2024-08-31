@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 10:18:04 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:18:13 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:26:48 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	exec_smt(t_stack **stack_a, t_stack **stack_b, int pos[2], int mode)
 			multi_execute(stack_a, stack_b, "rrb", pos[1] - pos[0]);
 	}
 }
+
 void	reverse_pos(t_stack **stack_a, t_stack **stack_b, int pos[2])
 {
 	pos[0] = stack_size(*stack_a) - pos[0];
