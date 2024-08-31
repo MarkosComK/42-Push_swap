@@ -197,9 +197,9 @@ Start with the stack_a creation, receive the args, transform them into values an
 
 Its everything working properly? 
 
-- Yes
+- Yes:
 
-So start building te functions in the subject (push, swap, rotate [...]) and don`t forget to test them a lot with your stack_a. That`s a good starting point and it will take a lot of time to do all of that, but you`ll understand the main concept of Push_swap after that.
+So start building te functions in the subject (push, swap, rotate [...]) and don't forget to test them a lot with your stack_a. That's a good starting point and it will take a lot of time to do all of that, but you`ll understand the main concept of Push_swap after that.
 
 ## recapitulating ✍️
 
