@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/28 18:31:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/08/31 10:11:48 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,14 @@ int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
 t_stack	*stack_first(t_stack *stack);
-int	max(int a, int b);
-int	min(int a, int b);
 //stack_utils_values.c
 int		stack_min(t_stack *stack);
 int		stack_max(t_stack *stack);
 int		stack_n_is_min(t_stack *stack);
 int		stack_n_is_max(t_stack *stack);
+//utils_values.c
+int	max(int a, int b);
+int	min(int a, int b);
 //srcs/utils
 //utils.c
 void	print_stack(t_stack *stack);
