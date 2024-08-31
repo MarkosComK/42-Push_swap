@@ -12,26 +12,6 @@
 
 #include "push_swap.h"
 
-t_stack	*stack_exception(int size, char **content)
-{
-	t_stack	*stack;
-	int		i;
-	int		j;
-
-	stack = stack_new_node(ft_atoi(content[0]));
-	i = 1;
-	while (i < size)
-	{
-		j = ft_atoi(content[i]);
-		stack_add_tail(stack, j);
-		i++;
-	}
-	while (*content)
-		free(*content++);
-	free(content);
-	return (stack);
-}
-
 t_stack	*stack_new(int ac, char **content)
 {
 	t_stack	*stack;
