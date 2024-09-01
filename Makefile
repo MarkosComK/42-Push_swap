@@ -52,16 +52,12 @@ ${CHECKER}: ${OBJ_CHECKER}
 
 bonus: ${CHECKER}
 
-${OBJ_CHECKER}: ${SRC_CHECKER}
-	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
-
-
 clean:
-	@${RM} ${OBJ_1} ${OBJ_2} ${BONUS_OBJ} ${NAME} ${BONUS}
+	@${RM} ${OBJ_1} ${OBJ_2} ${OBJ_CHECKER} ${NAME}
 	@cd $(LIBFTDIR) && $(MAKE) --silent clean
 
 fclean: clean
-	@${RM} ${NAME}
+	@${RM} ${NAME} ${CHECKER}
 	@cd $(LIBFTDIR) && $(MAKE) --silent fclean
 
 re: clean all
