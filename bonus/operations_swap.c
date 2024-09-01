@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 11:44:41 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:44:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:33:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	swap(t_stack **stack, int move)
+void	swap(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -27,15 +27,10 @@ void	swap(t_stack **stack, int move)
 	tmp->prev = NULL;
 	(*stack)->prev = tmp;
 	*stack = tmp;
-	if (move == SA)
-		write(1, "sa\n", 3);
-	if (move == SB)
-		write(1, "sb\n", 3);
 }
 
 void	swap_swap(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(stack_a, 0);
-	swap(stack_b, 0);
-	write(1, "ss\n", 3);
+	swap(stack_a);
+	swap(stack_b);
 }

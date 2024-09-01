@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 12:50:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 12:07:07 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:28:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,12 @@ int	main(int ac, char **av)
 		if (!line)
 			break ;
 		execute(&stack_a, &stack_b, line);
+		print_stacks(stack_a, stack_b);
 		free(line);
 	}
 	validate(stack_a, stack_b);
+	stack_free(stack_a);
+	stack_free(stack_b);
 	free(line);
 	return (0);
 }

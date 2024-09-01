@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 12:06:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:32:39 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ typedef struct s_stack
 # define RRA 8
 # define RRB 9
 
-void	swap(t_stack **stack, int move);
+void	swap(t_stack **stack);
 void	swap_swap(t_stack **stack_a, t_stack **stack_b);
-void	push(t_stack **stack_1, t_stack **stack_2, int move);
-void	rotate(t_stack **stack, int move);
-void	reverse_rotate(t_stack **stack, int move);
+void	push(t_stack **stack_1, t_stack **stack_2);
+void	rotate(t_stack **stack);
+void	reverse_rotate(t_stack **stack);
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
