@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:01:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 14:01:37 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 14:19:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_stack	*create_stack(t_stack *stack_a, int ac, char **av)
 		av = ft_split(av[1], ' ');
 	if (ac == 2)
 		i = -1;
+	if (!av[i+1])
+		ft_error(stack_a, ac, av);
 	while (av[++i])
 	{
 		if (is_valid(stack_a, av[i], ac, av) == false)
