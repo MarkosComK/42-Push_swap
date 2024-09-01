@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 09:49:35 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 13:33:23 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 14:02:29 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-bool	execute(t_stack **stack_a, t_stack **stack_b, char *line)
+void	execute(t_stack **stack_a, t_stack **stack_b, char *line)
 {
 	*stack_a = stack_first(*stack_a);
 	*stack_b = stack_first(*stack_b);
@@ -38,7 +38,4 @@ bool	execute(t_stack **stack_a, t_stack **stack_b, char *line)
 		reverse_rotate(stack_b);
 	else if (ft_strcmp(line, "rrr\n") == 0)
 		reverse_rotate_rotate(stack_a, stack_b);
-	else
-		return (true);
-	return (false);
 }

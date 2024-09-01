@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 13:32:39 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 14:02:38 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ bool	is_valid(t_stack *stack_a, char *str, int ac, char **av);
 int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 
-bool	execute(t_stack **stack_a, t_stack **stack_b, char *line);
+void	execute(t_stack **stack_a, t_stack **stack_b, char *line);
 #endif
