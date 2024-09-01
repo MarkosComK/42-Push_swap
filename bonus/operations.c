@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:57:38 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 13:58:40 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 10:19:22 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	swap(t_stack **stack, int move)
 {
 	t_stack	*tmp;
 
-	if (!stack || !*stack || !((*stack)->next))
+	if (!*stack || !((*stack)->next))
 		return ;
 	*stack = stack_first(*stack);
 	tmp = (*stack)->next;

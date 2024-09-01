@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 13:59:29 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 10:14:55 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include "../libft/libft.h"
+
+# define BOLD "\033[1m"
+# define BOLD_GREEN "\033[1;32m"
+# define BOLD_RED "\033[1;31m"
+# define BOLD_BLUE "\033[1;34m"
+# define BOLD_YELLOW "\033[1;33m"
+# define RESET "\033[0m"
+# define BOLD_WHITE "\033[1;37m"
 
 typedef struct s_stack
 {
@@ -47,4 +55,13 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 t_stack	*stack_first(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
 
+void	stack_free(t_stack *stack);
+void	ft_error(t_stack *stack);
+int		ft_atoi_ps(char *str, t_stack *stack_a);
+bool	is_valid(t_stack *stack_a, char *str);
+
+int	stack_sorted(t_stack *stack);
+int	stack_size(t_stack *stack);
+
+bool	execute(t_stack **stack_a, t_stack **stack_b, char *line);
 #endif
