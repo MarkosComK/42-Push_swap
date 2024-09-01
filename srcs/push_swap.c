@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:01:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:09:00 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:11:05 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,7 @@ int	main(int ac, char **av)
 		stack_free(stack_a);
 		stack_free(stack_b);
 	}
-	i = 0;
 	if (ac == 2)
-	{
-		while (av[i])
-		{
-			ft_printf("av %s\n", av[i]);
-			free(av[i]);
-			i++;
-		}
-		free(av);
-	}
+		free_av(av);
 	return (0);
 }

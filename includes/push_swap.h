@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:26:10 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:11:26 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,6 @@ void	print_stack(t_stack *stack);
 void	print_stacks(t_stack *stack1, t_stack *stack2);
 int		split_len(char	**tmp);
 void	ft_error(t_stack *stack);
+void	free_av(char **av);
 
 #endif

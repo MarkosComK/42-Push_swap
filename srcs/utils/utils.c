@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:01:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 10:22:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:11:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,17 @@ int	split_len(char **tmp)
 		free(*tmp++);
 	free(tmp);
 	return (i);
+}
+
+void	free_av(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }
