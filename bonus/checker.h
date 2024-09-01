@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:48:38 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 12:06:55 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ t_stack	*stack_add_node(t_stack *node, int content);
 t_stack	*stack_new_node(int content);
 
 void	stack_free(t_stack *stack);
-void	ft_error(t_stack *stack);
-int		ft_atoi_ps(char *str, t_stack *stack_a);
-bool	is_valid(t_stack *stack_a, char *str);
+void	ft_error(t_stack *stack, int ac, char **av);
+void	free_av(char **av);
+int		ft_atoi_ps(char *str, t_stack *stack_a, int ac, char **av);
+bool	is_valid(t_stack *stack_a, char *str, int ac, char **av);
 
 int		stack_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);

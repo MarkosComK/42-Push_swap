@@ -6,29 +6,16 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 09:11:22 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 09:13:10 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 12:06:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	stack_free(t_stack *stack)
+void	ft_error(t_stack *stack, int ac, char **av)
 {
-	t_stack	*tmp;
-
-	if (!stack)
-		return ;
-	while (stack)
-	{
-		tmp = (stack)->next;
-		(stack)->nbr = 0;
-		free(stack);
-		stack = tmp;
-	}
-}
-
-void	ft_error(t_stack *stack)
-{
+	if (ac == 2)
+		free_av(av);
 	stack_free(stack);
 	write(2, "Error\n", 6);
 	exit (1);
@@ -48,7 +35,7 @@ bool	is_space(char c)
 	return (false);
 }
 
-int	ft_atoi_ps(char *str, t_stack *stack_a)
+int	ft_atoi_ps(char *str, t_stack *stack_a, int ac, char **av)
 {
 	long long int	ans;
 	int				result;
@@ -62,26 +49,26 @@ int	ft_atoi_ps(char *str, t_stack *stack_a)
 	if (*str == '+' || *str == '-')
 		str++;
 	if (!*str)
-		ft_error(stack_a);
+		ft_error(stack_a, ac, av);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error(stack_a);
+			ft_error(stack_a, ac, av);
 		ans = (ans * 10) + (*str - 48);
 		str++;
 	}
 	if ((result * ans) > 2147483647 || (result * ans) < -2147483648)
-		ft_error(stack_a);
+		ft_error(stack_a, ac, av);
 	return (result * ans);
 }
 
-bool	is_valid(t_stack *stack_a, char *str)
+bool	is_valid(t_stack *stack_a, char *str, int ac, char **av)
 {
 	t_stack	*tmp;
 	int		nbr;
 
 	tmp = stack_first(stack_a);
-	nbr = ft_atoi_ps(str, stack_a);
+	nbr = ft_atoi_ps(str, stack_a, ac, av);
 	while (tmp)
 	{
 		if (tmp->nbr == nbr)
