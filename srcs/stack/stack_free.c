@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 15:44:16 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/22 13:17:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 10:34:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	stack_free(t_stack *stack)
 
 	if (!stack)
 		return ;
+	stack = stack_first(stack);
 	while (stack)
 	{
 		tmp = (stack)->next;
