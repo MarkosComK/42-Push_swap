@@ -102,7 +102,6 @@ int	main(int ac, char **av)
 		if (!line)
 			break ;
 		error = execute(&stack_a, &stack_b, line);
-		print_stacks(stack_a, stack_b);
 		free(line);
 	}
 	validate(stack_a, stack_b, error);
