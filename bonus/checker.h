@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 10:14:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:40:52 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	ft_error(t_stack *stack);
 int		ft_atoi_ps(char *str, t_stack *stack_a);
 bool	is_valid(t_stack *stack_a, char *str);
 
-int	stack_sorted(t_stack *stack);
-int	stack_size(t_stack *stack);
+int		stack_sorted(t_stack *stack);
+int		stack_size(t_stack *stack);
 
 bool	execute(t_stack **stack_a, t_stack **stack_b, char *line);
 #endif
