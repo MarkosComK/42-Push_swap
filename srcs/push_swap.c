@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:01:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:11:05 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:36:41 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	i = 0;
 	if (ac < 2)
-		ft_error(stack_a);
+		ft_error(stack_a, ac, av);
 	if (ac == 2)
 		av = ft_split(av[1], ' ');
 	if (ac == 2)
@@ -31,8 +31,10 @@ int	main(int ac, char **av)
 	{
 		while (av[++i])
 		{
-			if (is_valid(stack_a, av[i]) == false)
-				ft_error(stack_a);
+			if (is_valid(stack_a, av[i], ac, av) == false)
+			{
+				ft_error(stack_a, ac, av);
+			}
 			stack_a = stack_add_node(stack_a, ft_atoi(av[i]));
 		}
 		stack_sort(stack_a, stack_b);

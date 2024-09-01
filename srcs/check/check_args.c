@@ -6,19 +6,19 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:14:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/28 15:17:06 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:35:09 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	is_valid(t_stack *stack_a, char *str)
+bool	is_valid(t_stack *stack_a, char *str, int ac, char **av)
 {
 	t_stack	*tmp;
 	int		nbr;
 
 	tmp = stack_first(stack_a);
-	nbr = ft_atoi_ps(str, stack_a);
+	nbr = ft_atoi_ps(str, stack_a, ac, av);
 	while (tmp)
 	{
 		if (tmp->nbr == nbr)
@@ -28,7 +28,7 @@ bool	is_valid(t_stack *stack_a, char *str)
 	return (true);
 }
 
-int	ft_atoi_ps(char *str, t_stack *stack_a)
+int	ft_atoi_ps(char *str, t_stack *stack_a, int ac, char **av)
 {
 	long long int	ans;
 	int				result;
@@ -42,16 +42,16 @@ int	ft_atoi_ps(char *str, t_stack *stack_a)
 	if (*str == '+' || *str == '-')
 		str++;
 	if (!*str)
-		ft_error(stack_a);
+		ft_error(stack_a, ac, av);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error(stack_a);
+			ft_error(stack_a, ac, av);
 		ans = (ans * 10) + (*str - 48);
 		str++;
 	}
 	if ((result * ans) > 2147483647 || (result * ans) < -2147483648)
-		ft_error(stack_a);
+		ft_error(stack_a, ac, av);
 	return (result * ans);
 }
 

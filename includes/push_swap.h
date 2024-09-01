@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:03:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:11:26 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:35:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ typedef struct s_cost_index
 
 //srcs/check
 //check_args.c
-bool	is_valid(t_stack *stack_a, char *str);
+bool	is_valid(t_stack *stack_a, char *str, int ac, char **av);
 t_stack	*first_node(t_stack *stack);
 bool	is_space(char c);
-int		ft_atoi_ps(char *str, t_stack *stack_a);
+int		ft_atoi_ps(char *str, t_stack *stack_a, int ac, char **av);
 //srcs/operations/
 //swap.c
 void	swap(t_stack **stack, int move);
@@ -116,7 +116,7 @@ int		min(int a, int b);
 void	print_stack(t_stack *stack);
 void	print_stacks(t_stack *stack1, t_stack *stack2);
 int		split_len(char	**tmp);
-void	ft_error(t_stack *stack);
+void	ft_error(t_stack *stack, int ac, char **av);
 void	free_av(char **av);
 
 #endif

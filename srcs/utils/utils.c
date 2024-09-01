@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 20:01:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:11:44 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:34:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ void	print_stacks(t_stack *stack1, t_stack *stack2)
 	}
 }
 
-void	ft_error(t_stack *stack)
+void	ft_error(t_stack *stack, int ac, char **av)
 {
+	if (ac == 2)
+		free_av(av);
 	stack_free(stack);
 	write(2, "Error\n", 6);
 	exit (1);
