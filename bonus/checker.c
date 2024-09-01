@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,38 +6,11 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 12:50:44 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/31 13:18:27 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:54:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-t_stack	*stack_new_node(int content)
-{
-	t_stack	*stack_new;
-
-	stack_new = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack_new)
-		return (NULL);
-	stack_new -> nbr = content;
-	stack_new -> next = NULL;
-	stack_new -> prev = NULL;
-	return (stack_new);
-}
-
-t_stack	*stack_add_node(t_stack *node, int content)
-{
-	t_stack	*new;
-
-	new = stack_new_node(content);
-	if (!new)
-		return (NULL);
-	if (!node)
-		return (new);
-	node->next = new;
-	new->prev = node;
-	return (new);
-}
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)
 {
@@ -67,28 +39,20 @@ void	print_stacks(t_stack *stack1, t_stack *stack2)
 	}
 }
 
-static void	validate(t_stack *stack_a, t_stack *stack_b, bool error)
+void	validate(t_stack *stack_a, t_stack *stack_b)
 {
 	write(STDOUT_FILENO, BOLD, 4);
-	if (!error && stack_sorted(stack_a) && stack_size(stack_b) == 0)
+	if (stack_sorted(stack_a) && stack_size(stack_b) == 0)
 		write(STDOUT_FILENO, "OK\n", 3);
 	else
 		write(STDOUT_FILENO, "KO\n", 3);
 	write(STDOUT_FILENO, RESET, 4);
 }
 
-int	main(int ac, char **av)
+t_stack	*create_stack(t_stack *stack_a, char **av)
 {
-	char	*line;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	bool	error;
 	int		i;
-	
-	(void) ac;
 
-	stack_a = NULL;
-	stack_b = NULL;
 	i = 0;
 	while (av[++i])
 	{
@@ -96,15 +60,28 @@ int	main(int ac, char **av)
 			ft_error(stack_a);
 		stack_a = stack_add_node(stack_a, ft_atoi(av[i]));
 	}
+	return (stack_a);
+}
+
+int	main(int ac, char **av)
+{
+	char	*line;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	(void) ac;
+	stack_a = NULL;
+	stack_b = NULL;
+	stack_a = create_stack(stack_a, av);
 	while (1)
 	{
 		line = get_next_line(0);
 		if (!line)
 			break ;
-		error = execute(&stack_a, &stack_b, line);
+		execute(&stack_a, &stack_b, line);
 		free(line);
 	}
-	validate(stack_a, stack_b, error);
+	validate(stack_a, stack_b);
 	free(line);
 	return (0);
 }

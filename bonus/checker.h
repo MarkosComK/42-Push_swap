@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:46:20 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 11:40:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:48:38 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 t_stack	*stack_first(t_stack *stack);
 t_stack	*stack_last(t_stack *stack);
+t_stack	*stack_add_node(t_stack *node, int content);
+t_stack	*stack_new_node(int content);
 
 void	stack_free(t_stack *stack);
 void	ft_error(t_stack *stack);

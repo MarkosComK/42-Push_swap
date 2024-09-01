@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 13:57:38 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/01 10:19:22 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/01 11:44:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,50 +86,4 @@ void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 	reverse_rotate(stack_a, 0);
 	reverse_rotate(stack_b, 0);
 	write(1, "rrr\n", 4);
-}
-
-void	swap(t_stack **stack, int move)
-{
-	t_stack	*tmp;
-
-	if (!*stack || !((*stack)->next))
-		return ;
-	*stack = stack_first(*stack);
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
-	if (tmp->next != NULL)
-		tmp->next->prev = *stack;
-	tmp->next = *stack;
-	tmp->prev = NULL;
-	(*stack)->prev = tmp;
-	*stack = tmp;
-	if (move == SA)
-		write(1, "sa\n", 3);
-	if (move == SB)
-		write(1, "sb\n", 3);
-}
-
-void	swap_swap(t_stack **stack_a, t_stack **stack_b)
-{
-	swap(stack_a, 0);
-	swap(stack_b, 0);
-	write(1, "ss\n", 3);
-}
-
-t_stack	*stack_last(t_stack *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
-t_stack	*stack_first(t_stack *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack->prev)
-		stack = stack->prev;
-	return (stack);
 }
